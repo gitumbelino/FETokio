@@ -1,0 +1,116 @@
+<!--
+Prática 2.
+
+1. Criar um cabeçalho principal.
+2. Criar uma secção com dois artigos dentro dela.
+• Dar à secção uma classe com nome.
+• Dar um identificador com nome ao primeiro artigo.
+• Dar um identificador com nome ao segundo artigo.
+• Preencher os artigos com um ou dois parágrafos utilizando parágrafos lorem ipsum.
+3. Criar um rodapé com um menu de navegação.
+• O menu terá uma lista de dois artigos que irão conter links para outra página (pode ser externa ao nosso sítio web).
+
+4. Sobre o ficheiro CSS:
+• Alterar o estilo do cabeçalho (cor, tipo de letra, alinhamento, etc.)
+• Use o seletor de classes para dar à secção uma borda esquerda de 8%, uma borda direita de 5% e uma borda superior
+de 30 pontos.
+• Utilizar os seletores de identificação para estilizar cada artigo separadamente. Um terá fonte tamanho 16 e o outro
+tamanho 12. Um terá texto justificado e o outro será negrito e itálico. Os dois artigos terão um texto de cor diferente.
+• Colocar o menu centrado com a lista em linha.
+• Utilize o seletor de pseudo-classe nos links para que o texto fique cor-de-laranja quando o cursor é colocado sobre
+ele.
+
+Vamos assumir que nos reunimos com o cliente, e que já temos o esboço do website. Por isso, para esta primeira
+parte, perguntamos:
+∙ É preciso converter o sketching que se fez em código. Pode colocar o código que quiser, isto inclui, por exemplo,
+CSS.
+∙ Alterar o título para "Página Web Completa".
+∙ Por enquanto deve ser uma única página, o mais completa possível.
+∙ Incluiremos logos para as redes sociais.
+∙ Incluiremos um <aside> no lado direito para incluir publicidade, um formulário ou os últimos comentários das
+redes sociais. (Exemplo abaixo)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="revisao_aulas_css_2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <title>EXE 2 CSS</title>
+</head>
+
+
+
+<body>
+    <h1>Sobre a escola</h1>
+    <section class="seccao-um">
+        <article class="artigo-um">
+            <header>
+                <h2>
+                    Artigo 1
+                </h2>
+            </header>
+            <p>bLorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error, accusamus rem cumque
+                asperiores
+                ratione? Repellendus nulla, dolorum soluta harum deserunt repudiandae iure eos eum magnam optio dicta
+                laboriosam
+                nemo repellat molestias dolore in! Earum fuga id repellendus, quaerat dolores autem. Magnam accusamus
+                pariatur
+                aliquid dolor eligendi? Similique eius dolore blanditiis iusto perferendis.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error, accusamus rem cumque
+                asperiores
+                ratione? Repellendus nulla, dolorum soluta harum deserunt repudiandae iure eos eum magnam optio dicta
+                laboriosam
+                nemo repellat molestias dolore in! Earum fuga id repellendus, quaerat dolores autem. Magnam accusamus
+                pariatur
+                aliquid dolor eligendi? Similique eius dolore blanditiis iusto perferendis.</p>
+            <footer>
+                <p><em>18/5/2054</em></p>
+            </footer>
+        </article>
+        <article class="artigo-dois">
+            <header>
+                <h2>
+                    Artigo 2
+            
+                </h2>
+            </header>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error, accusamus rem cumque
+                asperiores
+                ratione? Repellendus nulla, dolorum soluta harum deserunt repudiandae iure eos eum magnam optio dicta
+                laboriosam
+                nemo repellat molestias dolore in! Earum fuga id repellendus, quaerat dolores autem. Magnam accusamus
+                pariatur
+                aliquid dolor eligendi? Similique eius dolore blanditiis iusto perferendis.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error, accusamus rem cumque
+                asperiores
+                ratione? Repellendus nulla, dolorum soluta harum deserunt repudiandae iure eos eum magnam optio dicta
+                laboriosam
+                nemo repellat molestias dolore in! Earum fuga id repellendus, quaerat dolores autem. Magnam accusamus
+                pariatur
+                aliquid dolor eligendi? Similique eius dolore blanditiis iusto perferendis.</p>
+            <footer>
+                <p><em>18/5/2054</em></p>
+            </footer>
+        </article>
+    </section>
+    <footer>
+        <ul>
+            <li><a href="expresso.pt">link 1</a></li>
+            <li><a href="publico.pt">link 2</a></li>
+        </ul>
+
+
+    </footer>
+
+
+</body>
+
+</html>

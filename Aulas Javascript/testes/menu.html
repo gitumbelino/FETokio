@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+</head>
+<body>
+    <h1>Restaurant Menu</h1>
+    
+    <!-- Section for Main Dishes -->
+    <h2>Main Dishes</h2>
+    <ol>
+        <li id="main1">Grilled Chicken</li>
+        <li id="main2">Spaghetti Carbonara</li>
+        <li id="main3">Beef Steak</li>
+        <li id="main4">Vegetable Stir-fry</li>
+        <li id="main5">Fish Tacos</li>
+    </ol>
+    
+    <!-- Section for Side Dishes -->
+    <h2>Side Dishes</h2>
+    <ol>
+        <li id="side1">French Fries</li>
+        <li id="side2">Caesar Salad</li>
+        <li id="side3">Garlic Bread</li>
+        <li id="side4">Mashed Potatoes</li>
+        <li id="side5">Steamed Vegetables</li>
+    </ol>
+    
+    <button onclick="chooseMenu()">Choose Your Menu</button>
+    
+    <script>
+        function chooseMenu() {
+            // Prompt for main dish selection
+            const mainDishChoice = prompt("Choose a main dish (enter the number 1-5):");
+            let mainDish;
+            
+            // Determine the chosen main dish based on input
+            switch(mainDishChoice) {
+                case '1':
+                    mainDish = "Grilled Chicken";
+                    break;
+                case '2':
+                    mainDish = "Spaghetti Carbonara";
+                    break;
+                case '3':
+                    mainDish = "Beef Steak";
+                    break;
+                case '4':
+                    mainDish = "Vegetable Stir-fry";
+                    break;
+                case '5':
+                    mainDish = "Fish Tacos";
+                    break;
+                default:
+                    alert("Invalid choice for main dish.");
+                    return;
+            }
+            
+            // Prompt for side dish selection
+            const sideDishChoice = prompt("Choose a side dish (enter the number 1-5):");
+            let sideDish;
+            
+            // Determine the chosen side dish based on input
+            switch(sideDishChoice) {
+                case '1':
+                    sideDish = "French Fries";
+                    break;
+                case '2':
+                    sideDish = "Caesar Salad";
+                    break;
+                case '3':
+                    sideDish = "Garlic Bread";
+                    break;
+                case '4':
+                    sideDish = "Mashed Potatoes";
+                    break;
+                case '5':
+                    sideDish = "Steamed Vegetables";
+                    break;
+                default:
+                    alert("Invalid choice for side dish.");
+                    return;
+            }
+            
+            // Display the chosen main and side dishes
+            alert(`You have chosen: ${mainDish} with ${sideDish}`);
+        }
+    </script>
+</body>
+</html>

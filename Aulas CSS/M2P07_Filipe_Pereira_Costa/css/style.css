@@ -1,0 +1,250 @@
+
+/* welcome section  ---------------------------------------------*/
+
+nav {
+    max-width: 1200px;
+    justify-content: center;
+    margin: auto;
+}
+ 
+.studio-name {
+    font-family: "Satisfy", cursive;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+    color: white;
+}
+
+.nav-link {
+    font-size: 20px;
+    color: white;
+}
+
+nav img {
+    width: 40px;
+    height: auto;
+    margin-top: 0px;
+  }
+
+  .navbar-toggler {
+    border: none !important;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+  
+
+@media screen and (max-width: 576px) { 
+
+    nav img {
+        width: 10px;
+        height: 10px;
+    }
+ 
+    .navbar-brand {
+        margin: 0 16px;
+        
+    }
+    
+    .studio-name {
+        font-family: "Satisfy", cursive;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 20px;
+        color: white;
+    }
+    
+    .nav-link {
+        font-size: 20px;
+    }
+
+}
+
+
+/* welcome section  ---------------------------------------------*/
+
+.first-section {
+    max-width: 1200px;
+    justify-content: center;
+    margin: auto;   
+    
+}
+
+.intro-msg, .cta-msg{
+    background-color: #F5C000;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+.intro-img {
+  background-image: url("../media/img/intro-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 640px) {
+
+    .intro-img {
+        display: none;
+    }
+
+    .intro-msg {
+        background-image: linear-gradient(to bottom left, #f5c00080, #FFFFFF), url("../media/img/intro-image.jpg");
+        background-size: cover;
+        background-position: center;  
+    }
+}
+
+
+/* works ---------------------------------------------*/
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px; 
+    margin-top: 50px;
+  }
+
+  .image-row img {
+    max-width: 31.5%;
+  }
+
+  #carousel {
+    padding: 16px;
+  }
+
+@media screen and (min-width: 640px) {
+    #carousel {
+        display: none;
+        
+      } 
+      
+}
+
+@media screen and (max-width: 640px) {
+   .projects {
+    display: none;
+   }
+}
+
+/* clients ---------------------------------------------*/
+
+.clients-section {
+    background-color: #F5C000;
+}
+
+h3 {
+   padding-top: 32px;
+}
+
+.clients-brands {
+    max-width: 1080px ;
+    justify-content: center;
+    margin: auto; 
+}
+
+/* call to action ---------------------------------------------*/
+
+.cta-section {
+    max-width: 1200px;
+    justify-content: center;
+    margin: auto; 
+}
+
+.cta-msg {
+    border-radius: 24px 0 0 24px; 
+}
+
+.cta-section h2 {
+    font-size: 36px;
+}
+
+button {
+    margin-top: 32px;
+}
+
+.cta-img {
+    background-image: url("../media/img/collaborate.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 24px 24px 0;
+  }
+
+  @media screen and (max-width: 640px) {
+
+    .cta-section {
+        padding: 0 20px 16px 20px;
+    }
+
+
+    .cta-img {
+        display: none;
+    }
+
+    
+    .cta-msg {
+        background-image: linear-gradient(to bottom left, #f5c00080, #FFFFFF), url("../media/img/collaborate.png");
+        background-size: cover;
+        background-position: center;
+        border-radius: 16px;
+        padding: 16px;
+    }
+
+    .cta-msg {
+
+        background-color: none;
+
+    }
+}
+
+/* staff ---------------------------------------------*/
+  
+.staff-section-items {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.staff-items{
+    justify-content: center;
+    margin: auto; 
+}
+
+h6 {
+    font-size: 24px;
+    padding-top: 16px;
+}
+
+.staff-card img {
+    border-radius: 300px;
+}
+
+@media screen and (max-width: 800px) {
+
+    .staff-section {
+        display: none;
+    }
+
+}
+
+.footer-items {
+    max-width: 1000px;
+    margin:auto;
+}
+
+footer h5 {
+    margin-top: 16px ;
+}
+
+.footer-allrights {
+    background-color: rgb(72, 72, 72);
+}

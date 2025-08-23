@@ -1,0 +1,44 @@
+/*
+palette
+height: 500px;
+    height: 500px;
+*/
+
+
+
+.content, aside  {
+    display: inline-block;
+
+}
+
+.palette {
+    background-color:
+        #CCB429 #998B3D #FFD800 #66603D #333129
+}
+
+.navbar {
+    background-color: #998B3D;
+    height: 50px;
+}
+.home {
+    text-decoration: none;
+    color: white;
+}
+
+h2, h3 {
+    color: white;
+}
+
+.content {
+    background-color: #CCB429;  
+}
+aside {
+    background-color: #66603D;
+     
+}
+
+.footer {
+    background-color: #333129;
+    height: 40px;
+
+}
