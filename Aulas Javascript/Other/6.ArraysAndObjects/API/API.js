@@ -2,6 +2,9 @@ const form = document.querySelector("form");
 const todoList = document.querySelector(".todos");
 const apiUrl = `http://localhost:4000/todos`;
 
+
+
+
 const loadTodos = () => {
 
     todoList.innerHTML = ""
@@ -13,14 +16,16 @@ const loadTodos = () => {
             todos.forEach(todo => {
 
                 const completed = todo.completed ? "completed" : "incompleted"
-                const buttonText = todo.completed ? "Mark Complete" : "Mark Incomplete";
+                const buttonText = todo.completed ? "Mark Incomplete" : "Mark Complete";
                 todoList.innerHTML += `
                 
                 <div user-id=${todo.userId} 
                     todo-id=${todo.id} 
                     class= "todo ${completed}">
                     <div>${todo.title}</div>
-                <div><button onclick="toggleCompletion()">${buttonText}</button>
+                <div><button onclick="toggleCompletion('${todo.id}', ${todo.completed})">
+                ${buttonText}
+                </button>
                 </div>
                 </div>
                 `;
@@ -29,25 +34,31 @@ const loadTodos = () => {
 }
 
 
-toggleCompletion = (e) => {
-    console.log(e)
+
+async function toggleCompletion(id, completed) {
+
+    await fetch(`${apiUrl}/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ completed: !completed })
+    });
+    loadTodos();
 }
 
 
-window.onload = () => {
-    loadTodos()
-}
+form.addEventListener("submit", async e => {
+
+    e.preventDefault();
+
+    const titleInput = document.querySelector("#title");
+    const title = titleInput.value.trim();
+
+    if (!title) return;
 
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-
-    e.preventDefault()
-
-    const title = e.target.title.value
-    console.log(title)
-
-
-    const response = await fetch(apiUrl, {
+    await fetch(apiUrl, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -55,9 +66,12 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         body: JSON.stringify({ title, userId: "1", completed: false })
     });
 
-    console.log(response)
+
+    titleInput.value = ""
     loadTodos()
 
 })
+
+window.onload = loadTodos;
 
 
