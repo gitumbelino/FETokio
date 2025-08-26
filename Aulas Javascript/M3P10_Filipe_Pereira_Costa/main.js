@@ -1,22 +1,36 @@
 
 // 1. Criar a classe Persona com os atributos: nome, apelido e idade.
 
-let person = {
 
-    name: "",
-    surname: "",
-    age: "",
-    items: [] // 2. Os objetos pessoais devem ser armazenados num array.
+
+
+class user {
+    constructor(name, surname, age, items // 2. Os objetos pessoais devem ser armazenados num array.
+    ) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.items = []
+    }
+
+}
+
+
+
+
+const getFormData = () => {
+
+
+
 } 
-
-
-
-
 
 
 
 // 3. Criar no documento HTML um botão "Adicionar" que quando clicado chama a função "Persona()", e um botão "Mostrar" que
 // quando clicado exibe todas as pessoas armazenadas no array.
+
+
+
 
 
 
