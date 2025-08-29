@@ -15,19 +15,23 @@
 
     <form>
       <div class="mb-3">
-        <label for="userName" class="form-label">Name</label>
+        <label for="user-name" class="form-label">Name</label>
         <input type="text" class="form-control" id="user-name">
       </div>
       <div class="mb-3">
-        <label for="userSurname" class="form-label">Surname</label>
+        <label for="user-surname" class="form-label">Surname</label>
         <input type="text" class="form-control" id="user-surname">
       </div>
       <div class="mb-3">
-        <label for="userAge" class="form-label">Age</label>
+        <label for="user-age" 8class="form-label">Age</label>
         <input type="number" class="form-control" id="user-age">
       </div>
+      <div class="mb-3">
+        <label for="user-items" class="form-label">Items</label>
+        <input type="text" class="form-control" id="user-items">
+      </div>
       <div>
-        <button type="button" class="btn btn-primary">Add</button>
+          <button id="submit-btn" type="button" class="btn btn-primary">Add</button>
       </div>
     </form>
 
@@ -35,7 +39,7 @@
 
 
 
-    <button onclick="ShowUsers()" type="button" class="btn btn-info">Show</button>
+    <!-- <button onclick="ShowUsers()" type="button" class="btn btn-info">Show</button> -->
   </main>
   <script src="main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
