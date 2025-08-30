@@ -101,8 +101,11 @@ const userCards = document.querySelector("#user-cards");
 
 const loadAllUsers = () => {
 
+   
+
     userCards.innerHTML = "";
 
+    
 
     fetch(apiUrl)
         .then(response => response.json())
