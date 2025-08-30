@@ -96,3 +96,41 @@ async function addUser(e) {
 }
 
 button.addEventListener("click", addUser);
+
+
+const showUsersButton = document.getElementById("show-all-btn");
+
+const userCards = document.querySelector("#user-cards");
+
+
+const loadAllUsers = () => {
+
+    userCards.innerHTML = "";
+
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(users => {
+
+            users.forEach(user => {
+
+                userCards.innerHTML += `
+            
+             <div class="card" style="width: 18rem;">
+            <div class="card-header">
+            ${user.name} ${user.surname}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Age: ${user.age}</li>
+      <li class="list-group-item">Items: ${user.items}</li>
+    </ul>
+  </div>
+            `
+            })
+
+        })
+
+
+}
+
+showUsersButton.addEventListener("click", loadAllUsers);

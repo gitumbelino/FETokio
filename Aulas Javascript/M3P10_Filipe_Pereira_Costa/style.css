@@ -7,3 +7,10 @@ align-content: center;
     margin: auto;
 
 }
+
+main {
+
+
+        display: flex;
+
+}
