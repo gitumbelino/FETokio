@@ -80,7 +80,7 @@ async function addUser(e) {
         counter++
 
         if (counter < 5) {
-            document.querySelector('#submit-btn').innerText = `${counter + 1} / 5`;
+            document.querySelector('#submit-btn').innerText = `Add user ${counter + 1} / 5`;
         } else {
             document.getElementById("submit-btn").disabled = true;
             button.innerText = "5 users added";
@@ -115,15 +115,18 @@ const loadAllUsers = () => {
             users.forEach(user => {
 
                 userCards.innerHTML += `
-            
-             <div class="card" style="width: 18rem;">
-            <div class="card-header">
+
+            <div class="p-3">
+             <div class="card" style="width: auto;">
+            <div class="card-header"> 
             ${user.name} ${user.surname}
-    </div>
+            </div>
+            
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Age: ${user.age}</li>
       <li class="list-group-item">Items: ${user.items}</li>
     </ul>
+  </div>
   </div>
             `
             })
