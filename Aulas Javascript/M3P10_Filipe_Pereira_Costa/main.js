@@ -62,17 +62,13 @@ async function addUser(e) {
         let newUser = new User(userName, userSurname, age, items);
 
 
-        const response = await fetch(apiUrl, {
+        await fetch(apiUrl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(newUser)
         });
-
-        if (!response.ok) {
-            throw new Error('API request failed');
-        }
 
         document.getElementById("new-user-form").reset();
 
@@ -117,7 +113,7 @@ const loadAllUsers = () => {
                 userCards.innerHTML += `
 
             <div class="p-3">
-             <div class="card" style="width: auto;">
+             <div class="card">
             <div class="card-header"> 
             ${user.name} ${user.surname}
             </div>
