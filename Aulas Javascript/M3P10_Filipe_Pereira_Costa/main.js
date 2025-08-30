@@ -23,7 +23,9 @@ class User {
 const apiUrl = `http://localhost:4000/users`;
 const button = document.getElementById("submit-btn");
 
+button.innerText = "Add user 1/5";
 
+//coloquei um contador para saber o nr de vezes que já adicionámos um utilizador
 let counter = 0
 
 async function addUser(e) {
@@ -34,7 +36,12 @@ async function addUser(e) {
 
     try {
 
+        if (counter >= 5) {
+            return;
+        }
+
         e.preventDefault();
+
 
         const userNameInput = document.querySelector("#user-name");
         const userName = userNameInput.value;
@@ -55,7 +62,7 @@ async function addUser(e) {
         let newUser = new User(userName, userSurname, age, items);
 
 
-        await fetch(apiUrl, {
+        const response = await fetch(apiUrl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -63,24 +70,29 @@ async function addUser(e) {
             body: JSON.stringify(newUser)
         });
 
+        if (!response.ok) {
+            throw new Error('API request failed');
+        }
+
         document.getElementById("new-user-form").reset();
 
+
         counter++
+
+        if (counter < 5) {
+            document.querySelector('#submit-btn').innerText = `${counter + 1} / 5`;
+        } else {
+            document.getElementById("submit-btn").disabled = true;
+            button.innerText = "5 users added";
+        }
+
         return true;
 
-    } catch {
+    } catch (error) {
+        console.log("API error:", error);
         return false;
     }
 
 }
 
 button.addEventListener("click", addUser);
-
-if (counter < 5) {
-    addUser()
-} else {
-    alert("you have successfully added 5 user profiles");
-}
-
-
-
