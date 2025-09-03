@@ -1,0 +1,49 @@
+Viva Carlos
+
+O problema de sobreposição das suas sections ao reduzir o tamanho da tela pode estar relacionado à forma como o layout flexível das sections e as dimensões de seus elementos estão configuradas. Algumas abordagens para corrigir isso incluem ajustes no layout flexível e garantir que os elementos internos não excedam o tamanho da viewport. Aqui estão algumas sugestões:
+
+1 - No aside, tem "flex-shrink: 0;", o que significa que o elemento não encolherá quando a tela for reduzida. Isso pode estar a causar a sobreposição. Experimente ajustar o flex-shrink e testar o comportamento do layout.
+
+aside {
+
+    flex-shrink: 1; /* Permite o encolhimento */
+
+}
+
+2 - Para evitar que os elementos se sobreponham, adicione valores mínimos para as dimensões, para garantir que o layout permaneça organizado mesmo em telas pequenas.
+
+.divservices {
+
+    min-height: 300px;
+
+}
+
+.contactus {
+
+    min-width: 300px;
+
+}
+
+3 - Sua imagem no aside está fixa em 300px de largura e altura. Isso pode estar a causar a quebra do layout em tamanhos menores. Tente torná-la mais flexível, adaptando-se ao espaço disponível:
+
+img {
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+4 - Se algum conteúdo for maior que a área visível, adicionar a propriedade "overflow: hidden;" nos elementos pode ajudar a prevenir a sobreposição:
+
+.divservices, .contactus {
+
+    overflow: hidden;
+
+}
+
+5 - No código "@media screen and (max-width: 320px)", há algumas regras que podem estar em conflito com as que já existem para a resolução de 768px. Certifique-se de que essas regras estejam ajustadas corretamente para cobrir a mudança de layouts entre dispositivos.
+
+Espero ter ajudado!
+
+-Diogo

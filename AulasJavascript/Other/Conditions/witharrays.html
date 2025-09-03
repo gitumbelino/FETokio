@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+</head>
+<body>
+    <h1>Restaurant Menu</h1>
+    
+    <h2>Main Dishes</h2>
+    <ol id="main-dishes"></ol>
+    
+    <h2>Side Dishes</h2>
+    <ol id="side-dishes"></ol>
+    
+    <button onclick="chooseMenu()">Choose Your Menu</button>
+    
+    <script>
+        const mainDishes = ["Grilled Chicken", "Spaghetti Carbonara", "Beef Steak", "Vegetable Stir-fry", "Fish Tacos"];
+        const sideDishes = ["French Fries", "Caesar Salad", "Garlic Bread", "Mashed Potatoes", "Steamed Vegetables"];
+
+        function displayMenu() {
+            const mainDishesList = document.getElementById('main-dishes');
+            const sideDishesList = document.getElementById('side-dishes');
+            
+            mainDishes.forEach((dish, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${index + 1}: ${dish}`;
+                mainDishesList.appendChild(listItem);
+            });
+
+            sideDishes.forEach((dish, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${index + 1}: ${dish}`;
+                sideDishesList.appendChild(listItem);
+            });
+        }
+
+        function chooseMenu() {
+            const mainDishIndex = prompt(`Choose a main dish (enter the number 1-5):`) - 1;
+            const sideDishIndex = prompt(`Choose a side dish (enter the number 1-5):`) - 1;
+            
+            if (mainDishIndex >= 0 && mainDishIndex < mainDishes.length && sideDishIndex >= 0 && sideDishIndex < sideDishes.length) {
+                const chosenMainDish = mainDishes[mainDishIndex];
+                const chosenSideDish = sideDishes[sideDishIndex];
+                alert(`You have chosen: ${chosenMainDish} with ${chosenSideDish}`);
+            } else {
+                alert("Invalid choice. Please try again.");
+            }
+        }
+
+        // Display the menu when the page loads
+        window.onload = displayMenu;
+    </script>
+</body>
+</html>

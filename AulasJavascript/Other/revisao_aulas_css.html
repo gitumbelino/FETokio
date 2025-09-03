@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="revisao_aulas_css.css">
+    <title>Document</title>
+</head>
+
+<!--
+Para esta prática vamos começar com uma página em branco e vamos acrescentar-lhe estilos. Para isso:
+1. Teremos de criar um ficheiro CSS adicional para anexar à nossa página HTML.
+2. Criar um cabeçalho na página com o logotipo da Tokio School e o texto “Tokio School” abaixo do logotipo. Este texto terá um
+tamanho de 16 px, terá a cor #333fff e estará em negrito. A imagem terá uma altura de 60px.
+3. Incluiremos um menu com o seguinte:
+• "Início", "Sobre Nós" e "Cursos".
+• O menu será horizontal com 100% de largura, cor de fundo preta e fonte branca.
+4. Iremos criar dois artigos com texto dentro deles.
+5. Vamos criar um rodapé com um "Aviso Legal", "Política de Cookies" e "Política de Privacidade", terá um layout horizontal, com
+fundo preto e fonte branca.
+
+Prática 2.
+4. Sobre o ficheiro CSS:
+• Alterar o estilo do cabeçalho (cor, tipo de letra, alinhamento, etc.)
+• Use o seletor de classes para dar à secção uma borda esquerda de 8%, uma borda direita de 5% e uma borda superior
+de 30 pontos.
+• Utilizar os seletores de identificação para estilizar cada artigo separadamente. Um terá fonte tamanho 16 e o outro
+tamanho 12. Um terá texto justificado e o outro será negrito e itálico. Os dois artigos terão um texto de cor diferente.
+• Colocar o menu centrado com a lista em linha.
+• Utilize o seletor de pseudo-classe nos links para que o texto fique cor-de-laranja quando o cursor é colocado sobre
+ele.
+
+Vamos assumir que nos reunimos com o cliente, e que já temos o esboço do website. Por isso, para esta primeira
+parte, perguntamos:
+∙ É preciso converter o sketching que se fez em código. Pode colocar o código que quiser, isto inclui, por exemplo,
+CSS.
+∙ Alterar o título para "Página Web Completa".
+∙ Por enquanto deve ser uma única página, o mais completa possível.
+∙ Incluiremos logos para as redes sociais.
+∙ Incluiremos um <aside> no lado direito para incluir publicidade, um formulário ou os últimos comentários das
+redes sociais. (Exemplo abaixo)
+
+-->
+
+<body>
+
+    <header>
+        <img src="/REVISÕES/img/tokio_logo.png" alt="">
+        <p class="nome-escola"><b>Tokio School</b></p>
+        <nav>
+            <div>
+                <a href="">Inicio</a>
+                <a href="">Sobre nós</a>
+                <a href="">Cursos</a>
+            </div>
+        </nav>
+        <section>
+            <article>
+                <header>
+                    <h2>
+                        Titulo do 1º Artigo
+                    </h2>
+                </header>
+                <p>
+                    descrição do 1º artigo Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+                    officiis
+                    vitae inventore hic reiciendis libero laboriosam voluptatem placeat consectetur, ducimus aliquid
+                    eveniet quis delectus eum dolore! Quia corrupti commodi illum eius dolore, molestias ipsa.
+                </p>
+                <footer class="article-footer">
+                    <p><em>24/02/2034</em></p>
+                    <button>Saber Mais</button>
+                </footer>
+            </article>
+        </section>
+        <section>
+            <article>
+                <header>
+                    <h2>
+                        Titulo do 1º Artigo
+                    </h2>
+                </header>
+                <p>
+                    descrição do 1º artigo Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+                    officiis
+                    vitae inventore hic reiciendis libero laboriosam voluptatem placeat consectetur, ducimus aliquid
+                    eveniet quis delectus eum dolore! Quia corrupti commodi illum eius dolore, molestias ipsa.
+                </p>
+                <footer class="article-footer">
+                    <p><em>24/02/2034</em></p>
+                    <button>Saber Mais</button>
+                </footer>
+            </article>
+        </section>
+    </header>
+    <br>
+    <footer class="main-footer">
+
+        <a href="">Aviso Legal</a> <br>
+        <a href="">Politica de Cookies</a><br>
+        <a href="">Politica de Privacy</a>
+    </footer>
+</body>
+
+</html>

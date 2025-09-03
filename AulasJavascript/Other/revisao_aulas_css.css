@@ -1,0 +1,27 @@
+nav {
+    width: 100%;
+    background-color: black;
+}
+
+img{
+    height: 60px;
+
+}
+
+a{
+    color: white;
+    
+}
+
+.nome-escola{
+    font-size: 16px;
+    color:#333fff;
+}
+
+.main-footer{
+    background-color: black;
+}
+
+.main-footer p{
+    color: white ;
+}

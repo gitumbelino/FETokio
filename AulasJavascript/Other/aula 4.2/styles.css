@@ -1,0 +1,31 @@
+#letters {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.circle {
+    padding: 1rem;
+background-color: beige;
+margin: 0.5rem;
+flex-grow: 1;
+text-align: center;
+
+
+}
+
+
+@media screen and (max-width: 767px) {
+#letters{
+    flex-direction: column;
+    font-size: 4rem;
+}
+
+}
+
+@media screen and (min-width: 768px) {
+    #letters{
+        flex-direction: row;
+        font-size: 8rem;
+    }
+
+}
