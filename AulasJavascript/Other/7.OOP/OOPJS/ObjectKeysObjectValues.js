@@ -1,3 +1,22 @@
+//checking object values =================================
+
+
+window.onload = () => {
+
+    const gerevasio =  {
+
+        nome: "Gerevásio",
+        sobrenome: "reciclatudo",
+        idade: 37
+
+    }
+
+    console.log(Object.keys(gerevasio))
+
+}
+
+
+
 //checking integrity of the objects =================================
 
 window.onload = () => {
@@ -6,13 +25,6 @@ window.onload = () => {
 
         .then(res => res.json())
         .then(allAlbums => {
-
-// eliminar para testar o filtro
-//             delete allAlbums[42].userId
-//             delete allAlbums[41].userId
-//             delete allAlbums[5].userId
-
-          
 
             allAlbums.forEach(album => {
 
@@ -24,15 +36,9 @@ window.onload = () => {
                     console.log("válido")
                 } else {
                     console.error("O albúm com id " + album.id + " não tem todas as keys, falta o userId")
-                }
-
-
-                
+                }                
             });
-
         })
-        
-
 }
 
 
