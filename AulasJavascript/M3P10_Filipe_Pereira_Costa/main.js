@@ -93,7 +93,6 @@ async function addUser(e) {
 
 button.addEventListener("click", addUser);
 
-
 const showUsersButton = document.getElementById("show-all-btn");
 
 const userCards = document.querySelector("#user-cards");
@@ -101,11 +100,7 @@ const userCards = document.querySelector("#user-cards");
 
 const loadAllUsers = () => {
 
-   
-
     userCards.innerHTML = "";
-
-    
 
     fetch(apiUrl)
         .then(response => response.json())
