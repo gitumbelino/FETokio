@@ -2,24 +2,14 @@
 
 
 
-//Para tal, utilizaremos uma expressão regular (RegEx Expression)
-// fornecida:
-// /^([a-zA-Z0-9_\ \-])+((([a-zA-Z0-9-])+(([a-zA-Z0-9]{2,4})+$/
-// • O script deve verificar se a palavra-passe introduzida tem entre 6 e 12 caracteres.
-// • E finalmente, ambas as palavras-passe devem ser verificadas para garantir que coincidem.
-// • O programa desencadeará uma mensagem de aviso para cada campo, caso os requisitos não sejam cumpridos.
+
+
+
+
 // PROGRAMAÇÃO FRONT-END:
 // HTML5, CSS, JSa
 
 // const signUpForm = document.getElementById("signup");
-
-const signUpForm = document.getElementById("signUp");
-
-
-const emailError = document.getElementById("emailError");
-const passwordError = document.getElementById("passwordError");
-const repeatPasswordError = document.getElementById("repeatPasswordError");
-
 
 const userNameInput = document.querySelector("#username");
 
@@ -27,11 +17,14 @@ userNameField = () => {
 
     const userName = userNameInput.value;
 
-    const userLengthError = document.getElementById("userLengthError");
-
     // • O script deve verificar se o nome do utilizador 
     //tem pelo menos 4 caracteres.
+
+    const userLengthError = document.getElementById("userLengthError");
+
     if (userName.length < 4) {
+
+        // • O programa desencadeará uma mensagem de aviso para cada campo, caso os requisitos não sejam cumpridos.
         userLengthError.innerHTML = `
         4 characters minumum
 `
@@ -41,96 +34,89 @@ userNameField = () => {
     }
 }
 
-
 userNameInput.addEventListener("input", userNameField);
 
 
 
-
-
+const emailInput = document.querySelector("#email");
 
 emailField = () => {
 
-    const emailInput = document.querySelector("#email");
-    
     const email = emailInput.value;
     const emailError = document.getElementById("emailError");
-    const regex = `/^([a-zA-Z0-9_\ \-])+((([a-zA-Z0-9-])+(([a-zA-Z0-9]{2,4})+$/`;
 
+    //Para tal, utilizaremos uma expressão regular (RegEx Expression)
+    // fornecida:
+    // /^([a-zA-Z0-9_\ \-])+((([a-zA-Z0-9-])+(([a-zA-Z0-9]{2,4})+$/
 
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+    if (regex.test(email) === true) {
+        emailError.innerHTML = ``
+    } else {
+        emailError.innerHTML = `
+         insert a valid email
+         `
+    }
 }
 
+emailInput.addEventListener("input", emailField);
 
 
 
-// const form = document.querySelector("#form");
-// const input = document.querySelector("#phone");
-// const output = document.querySelector("#output");
+const passwordInput = document.querySelector("#password");
 
-// const re = /^(?:\d{3}|\(\d{3}\))([-/.])\d{3}\1\d{4}$/;
+passwordField = () => {
 
-// function testInfo(phoneInput) {
-//     const ok = re.exec(phoneInput.value);
+    const password = passwordInput.value;
+    const passwordError = document.getElementById("passwordError");
 
-//     output.textContent = ok
-//         ? `Thanks, your phone number is ${ok[0]}`
-//         : `${phoneInput.value} isn't a phone number with area code!`;
+    // • O script deve verificar se a palavra-passe introduzida tem entre 6 e 12 caracteres.
+    if (password > 6 && password < 12) {
+        passwordError.innerHTML = ``
+    } else {
+        passwordError.innerHTML = `
+         password must have between 6 and 12 characters.
+         `
+    }
+}
 
-// form.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     testInfo(input);
-// });
+passwordInput.addEventListener("input", passwordField);
 
 
 
+const repeatPasswordInput = document.querySelector("#password");
 
+repeatPasswordField = () => {
+
+
+    const repeatPassword = repeatPasswordInput.value;
+    const repeatPasswordError = document.getElementById("repeatPasswordError");
+
+    // • E finalmente, ambas as palavras-passe devem ser verificadas para garantir que coincidem.
+
+    if (repeatPassword === passwordInput) {
+        repeatPasswordError.innerHTML = ``
+    } else {
+        repeatPasswordError.innerHTML = `
+     Password does not match
+     `
+    }
+};
+
+repeatPasswordInput = document.querySelector("repeatPassword");
+
+
+
+const signUpForm = document.getElementById("signUp");
 
 signUpForm.addEventListener("submit", function (e) {
 
     e.preventDefault();
-
-
     userNameField();
-
-
-
-
-    const passwordInput = document.querySelector("#password");
-    const password = passwordInput.value;
-
-    const repeatPasswordInput = document.querySelector("#repeatPassword");
-    const repeatPassword = repeatPasswordInput.value;
-
-
-
+    emailField();
+    passwordField();
+    repeatPasswordField();
 
 })
-
-
-
-
-
-// formValidation = () => {
-
-
-
-
-
-
-
-
-// }
-
-
-
-
-
-// signUpForm.onsubmit = () => {
-
-
-
-
-// }
-
 
