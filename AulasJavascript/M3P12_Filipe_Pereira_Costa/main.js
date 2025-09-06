@@ -1,15 +1,6 @@
 // 3. Criar um script para validar o formulário:
 
-
-
-
-
-
-
-// PROGRAMAÇÃO FRONT-END:
-// HTML5, CSS, JSa
-
-// const signUpForm = document.getElementById("signup");
+//=================================funcao para verificar o nome=======================================
 
 const userNameInput = document.querySelector("#username");
 
@@ -32,11 +23,13 @@ userNameField = () => {
         userLengthError.innerHTML = `
 `
     }
+
+    // console.log(userName);
 }
 
 userNameInput.addEventListener("input", userNameField);
 
-
+//=================================funcao para verificar os req mail=======================================
 
 const emailInput = document.querySelector("#email");
 
@@ -58,11 +51,14 @@ emailField = () => {
          insert a valid email
          `
     }
+
+    // console.log(email);
+
 }
 
 emailInput.addEventListener("input", emailField);
 
-
+//=============================funcao para verificar os req password===========================================
 
 const passwordInput = document.querySelector("#password");
 
@@ -72,51 +68,59 @@ passwordField = () => {
     const passwordError = document.getElementById("passwordError");
 
     // • O script deve verificar se a palavra-passe introduzida tem entre 6 e 12 caracteres.
-    if (password > 6 && password < 12) {
+    if (password.length >= 6 && password.length <= 12) {
         passwordError.innerHTML = ``
     } else {
         passwordError.innerHTML = `
-         password must have between 6 and 12 characters.
+         password must have between <br> 6 and 12 characters.
          `
     }
+
+    // console.log(password);
 }
 
 passwordInput.addEventListener("input", passwordField);
 
+//=============================funcao para verificar a repeticao da password===========================================
 
-
-const repeatPasswordInput = document.querySelector("#password");
+const repeatPasswordInput = document.querySelector("#repeatPassword");
 
 repeatPasswordField = () => {
 
-
+    const password = passwordInput.value;
     const repeatPassword = repeatPasswordInput.value;
     const repeatPasswordError = document.getElementById("repeatPasswordError");
 
     // • E finalmente, ambas as palavras-passe devem ser verificadas para garantir que coincidem.
 
-    if (repeatPassword === passwordInput) {
+    if (repeatPassword === password) {
         repeatPasswordError.innerHTML = ``
     } else {
         repeatPasswordError.innerHTML = `
      Password does not match
      `
     }
+
+    // console.log(repeatPassword); 
 };
 
-repeatPasswordInput = document.querySelector("repeatPassword");
+repeatPasswordInput.addEventListener("input",repeatPasswordField)
 
-
+//=====================execução das funcoes===================================================
+//dividi por funcoes de maneira a criar componentes 
+//reutilizaveis para fácilmente poder chamá-las no codigo 
 
 const signUpForm = document.getElementById("signUp");
 
 signUpForm.addEventListener("submit", function (e) {
-
     e.preventDefault();
     userNameField();
     emailField();
     passwordField();
     repeatPasswordField();
-
 })
+
+
+
+
 
