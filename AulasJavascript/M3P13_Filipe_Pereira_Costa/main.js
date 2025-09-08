@@ -67,16 +67,19 @@ twitterLinksButton.addEventListener("click", twitter);
 const paragraphLinksText = document.getElementById("paragraphLinks");
 const paragraphLinksButton = document.getElementById("paragraphLinksButton");
 
-const linkElementsThirdP = document.querySelectorAll('#información :nth-child(1)');
+const linkElementsThirdP = document.getElementsByTagName("p");
 
 paragraph = () => {
+
+    let thirdParagraph = linkElementsThirdP;
 
     paragraphLinksText.innerHTML = `
         The  paragraph contains ${linkElementsThirdP.length} links. 
         `
+        console.log(thirdParagraph)
 }
 
-console.log(linkElementsThirdP)
+
 
 
 
