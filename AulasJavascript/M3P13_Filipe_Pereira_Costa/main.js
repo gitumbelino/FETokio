@@ -5,12 +5,12 @@
 
 const linkElements = document.querySelectorAll('a[href]');
 
-const showLinksButton = document.getElementById("nrLinks");
-const linksText = document.querySelector("#nrLinksButton");
+const showLinksButton = document.getElementById("nrLinksButton");
+const linksText = document.querySelector("#nrLinks");
 
 showLinks = () => {
 
-    nrLinks.innerHTML = `
+    linksText.innerHTML = `
         There are ${linkElements.length} <br>
         links in this webpage.     
         `
@@ -67,19 +67,14 @@ twitterLinksButton.addEventListener("click", twitter);
 const paragraphLinksText = document.getElementById("paragraphLinks");
 const paragraphLinksButton = document.getElementById("paragraphLinksButton");
 
-const linkElementsThirdP = document.getElementsByTagName("p");
+const linkElementsThirdP = document.querySelectorAll('#información > :nth-child(4)');
 
 paragraph = () => {
-
-    let thirdParagraph = linkElementsThirdP;
 
     paragraphLinksText.innerHTML = `
         The  paragraph contains ${linkElementsThirdP.length} links. 
         `
-        console.log(thirdParagraph)
 }
-
-
 
 
 
