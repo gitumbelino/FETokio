@@ -39,18 +39,70 @@ let openArticle = (article) => {
 
     favouritesCookie.split(",").forEach((category, index) => {
 
-        favouritesArray.push(category);
+        if (!favouritesArray.includes(category))
+            favouritesArray.push(category)
     })
 
     let newCookies = favouritesArray.join(",")
     // console.log(newCookies)
 
+
+    if (newCookies[newCookies.length - 1] == ",")
+        newCookies = newCookies.substring(0, newCookies.length - 1)
+
     newCookies = newCookies.substring(0, newCookies.length - 2)
     console.warn(newCookies)
 
     setCookie("favourites", newCookies, 365)
-    console.log(getCookie("favourites"))
+    // console.log(getCookie("favourites"))
+
+    window.location = "/article.html"
 }
+
+let loadAd = () => {
+
+    let favourites = getCookie("favourites").split(',');
+
+    let favouritesAds = [];
+
+    let adsDOM = document.getElementById("ads")
+
+    ads.filter((ad) => {
+
+        favourites.forEach(favourite => {
+            console.log(ad.categories.includes(favourite))
+
+            if (ad.categories.includes(favourite)) {
+                if (!favouritesAds.includes(ad)) {
+                    favouritesAds.push(ad)
+                }
+            }
+
+        })
+
+    })
+
+    favouritesAds.forEach(ad => {
+
+        let ad = document.createElement("div")
+        ad.innerHTML = `Title: ${ad.title} Content:${ad.text} Categories: ${ad.categories}`
+    })
+
+    // let favouritesAds = ads.filter((ad) => {
+
+    //     favourites.forEach(favourite => {
+
+    //         if (ad.categories.includes(favourite)) {
+    //             return ad
+    //         }
+    //     })
+    // })
+
+    console.log(favouritesAds)
+
+}
+
+
 
 let article = () => {
 
