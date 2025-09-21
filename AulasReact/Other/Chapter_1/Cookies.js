@@ -27,6 +27,12 @@ function eraseCookie(name) {
 
 let openArticle = (article) => {
 
+    console.log("openArticle called with:", article);
+
+    setTimeout(() => {
+        window.location = "article.html";
+    }, 5000);
+
     let favouritesCookie = getCookie("favourites");
     let favouritesArray = [];
 
@@ -56,12 +62,15 @@ let openArticle = (article) => {
     setCookie("favourites", newCookies, 365)
     // console.log(getCookie("favourites"))
 
-    window.location = "/article.html"
+    // window.location = "article.html"
 }
 
 let loadAd = () => {
 
     let favourites = getCookie("favourites").split(',');
+
+    // console.log("Favourites cookie content:", getCookie("favourites"));
+    // console.log("Favourites array:", favourites);
 
     let favouritesAds = [];
 
@@ -84,8 +93,11 @@ let loadAd = () => {
 
     favouritesAds.forEach(ad => {
 
-        let ad = document.createElement("div")
-        ad.innerHTML = `Title: ${ad.title} Content:${ad.text} Categories: ${ad.categories}`
+        let adDOM = document.createElement("div")
+        adDOM.innerHTML = `Title: ${ad.title} Content:${ad.text} Categories: ${ad.categories}`
+
+        adsDOM.appendChild(adDOM)
+
     })
 
     // let favouritesAds = ads.filter((ad) => {
@@ -130,17 +142,7 @@ let ads = [
         title: "ad C",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus aut aperiam earum expedita non tempore est voluptas nostrum labore ratione temporibus architecto praesentium quisquam recusandae fuga aliquid, doloremque, reprehenderit beatae?",
         categories: ["cars", "nature"]
-    },
-    {
-        title: "ad  D",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus aut aperiam earum expedita non tempore est voluptas nostrum labore ratione temporibus architecto praesentium quisquam recusandae fuga aliquid, doloremque, reprehenderit beatae?",
-        categories: ["desserts", "swimsuits"]
-    },
-    {
-        title: "ad E",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus aut aperiam earum expedita non tempore est voluptas nostrum labore ratione temporibus architecto praesentium quisquam recusandae fuga aliquid, doloremque, reprehenderit beatae?",
-        categories: ["poo", "sausages"]
-    },
+    }
 
 ]
 
@@ -161,16 +163,5 @@ let articles = [
         title: "article C",
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus aut aperiam earum expedita non tempore est voluptas nostrum labore ratione temporibus architecto praesentium quisquam recusandae fuga aliquid, doloremque, reprehenderit beatae?",
         categories: ["cars", "nature"]
-    },
-    {
-        title: "article D",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus aut aperiam earum expedita non tempore est voluptas nostrum labore ratione temporibus architecto praesentium quisquam recusandae fuga aliquid, doloremque, reprehenderit beatae?",
-        categories: ["desserts", "swimsuits"]
-    },
-    {
-        title: "article E",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus aut aperiam earum expedita non tempore est voluptas nostrum labore ratione temporibus architecto praesentium quisquam recusandae fuga aliquid, doloremque, reprehenderit beatae?",
-        categories: ["poo", "sausages"]
-    },
-
-]
+    }
+] 
