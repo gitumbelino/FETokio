@@ -2,7 +2,10 @@ function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/ Secure;";
+    let cookieString = cname + "=" + cvalue + ";" + expires + ";path=/;";
+
+    document.cookie = cookieString;
+   
 }
 
 function getCookie(cname) {
@@ -27,7 +30,7 @@ function eraseCookie(name) {
 
 let openArticle = (article) => {
 
-    console.log("openArticle called with:", article);
+    // console.log("openArticle called with:", article);
 
     setTimeout(() => {
         window.location = "article.html";
@@ -45,19 +48,27 @@ let openArticle = (article) => {
 
     favouritesCookie.split(",").forEach((category, index) => {
 
-        if (!favouritesArray.includes(category))
-            favouritesArray.push(category)
+        // if (!favouritesArray.includes(category))
+        //     favouritesArray.push(category)
+        if (favouritesCookie) {  // Only if cookie exists and isn't empty
+            favouritesCookie.split(",").forEach((category, index) => {
+                if (!favouritesArray.includes(category))
+                    favouritesArray.push(category)
+            })
+        }
+    
+    
     })
 
     let newCookies = favouritesArray.join(",")
-    // console.log(newCookies)
+    console.log(newCookies)
 
 
-    if (newCookies[newCookies.length - 1] == ",")
-        newCookies = newCookies.substring(0, newCookies.length - 1)
+    // if (newCookies[newCookies.length - 1] == ",")
+    //     newCookies = newCookies.substring(0, newCookies.length - 1)
 
-    newCookies = newCookies.substring(0, newCookies.length - 2)
-    console.warn(newCookies)
+    // newCookies = newCookies.substring(0, newCookies.length - 2)
+    // console.warn(newCookies)
 
     setCookie("favourites", newCookies, 365)
     // console.log(getCookie("favourites"))
@@ -66,7 +77,8 @@ let openArticle = (article) => {
 }
 
 let loadAd = () => {
-
+    console.log("Raw document.cookie:", document.cookie);
+    console.log("getCookie('favourites') returns:", getCookie("favourites"));
     let favourites = getCookie("favourites").split(',');
 
     // console.log("Favourites cookie content:", getCookie("favourites"));
@@ -88,6 +100,15 @@ let loadAd = () => {
             }
 
         })
+
+        favourites.forEach(favourite => {
+            console.log(`Checking favourite: "${favourite}"`);
+            
+            ads.forEach(ad => {
+                console.log(`Against ad categories:`, ad.categories);
+                console.log(`Match found:`, ad.categories.includes(favourite));
+            });
+        });
 
     })
 
