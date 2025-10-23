@@ -1,0 +1,47 @@
+Content-Security-Policy: (Report-Only policy) The page’s settings would block an event handler (script-src-attr) from being executed because it violates the following directive: “script-src 'nonce-DF9KfAI99F_xYMhg7cL9aw' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:”. Consider using a hash ('sha256-IWu8eKPFpwBlPtvm+lmwBh1mAdRu4b2jd4cGC9eFA54=') together with 'unsafe-hashes'.
+Source: _rtf(this) www.google.com
+document.cookies
+undefined
+document.cookie
+"SOCS=CAESHwgBEhJnd3NfMjAyNTEwMTYtMF9SQzEaBXB0LVBUIAEaBgiAjsbHBg"
+let cookieDate = Date.now()
+undefined
+let currentYear = new Date().getFullYear()
+undefined
+cookieDate
+1760718078369
+currentYear
+2025
+let expirationDate = new Date(currentYear, 11, 31)
+undefined
+expirationDate
+Date Wed Dec 31 2025 00:00:00 GMT+0000 (Greenwich Mean Time)
+
+expirationDateUTC = expirationDate.toUTCString()
+"Wed, 31 Dec 2025 00:00:00 GMT"
+expirationDateUTC
+"Wed, 31 Dec 2025 00:00:00 GMT"
+let myCookie = "M4_UD01_P01"
+undefined
+myCookie
+"M4_UD01_P01"
+document.cookie = `${myCookie}=${cookieDate};expires=${expirationDateUTC}; path=/`
+"M4_UD01_P01=1760718078369;expires=Wed, 31 Dec 2025 00:00:00 GMT; path=/"
+document.cookie
+"SOCS=CAESHwgBEhJnd3NfMjAyNTEwMTYtMF9SQzEaBXB0LVBUIAEaBgiAjsbHBg; M4_UD01_P01=1760718078369"
+document.cookie.split(';').reduce((cookies, cookie) => {
+    const [name, value] = cookie.split('=').map(c => c.trim());
+    return { ...cookies, [name]: value };
+}, {});
+Object { SOCS: "CAESHwgBEhJnd3NfMjAyNTEwMTYtMF9SQzEaBXB0LVBUIAEaBgiAjsbHBg", M4_UD01_P01: "1760718078369" }
+
+document.cookie = "M4_UD01_P01=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"
+"M4_UD01_P01=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"
+document.cookie
+"SOCS=CAESHwgBEhJnd3NfMjAyNTEwMTYtMF9SQzEaBXB0LVBUIAEaBgiAjsbHBg"
+document.cookie.split(';').reduce((cookies, cookie) => {
+    const [name, value] = cookie.split('=').map(c => c.trim());
+    return { ...cookies, [name]: value };
+}, {});
+Object { SOCS: "CAESHwgBEhJnd3NfMjAyNTEwMTYtMF9SQzEaBXB0LVBUIAEaBgiAjsbHBg" }
+

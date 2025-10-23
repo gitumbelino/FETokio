@@ -1,21 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <main>
         <h1>Article A</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, dicta quidem aspernatur, eum saepe similique delectus doloremque laborum expedita eius rem libero, maiores vero iusto accusamus deleniti ducimus sed dolores.</p>
-    <div id="ads"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, dicta quidem aspernatur, eum saepe similique
+            delectus doloremque laborum expedita eius rem libero, maiores vero iusto accusamus deleniti ducimus sed
+            dolores.</p>
+        <div id="ads"></div>
     </main>
     <script src="cookies.js">
-        
+
     </script>
-<script>
-    loadAd();
-</script>
+    <script>
+        loadAd();
+    </script>
 </body>
+
 </html>
+
+<script>
+
+
+    // document.cookie
+    // 'SOCS=CAESHAgCEhJnd3NfMjAyNTA3MTQtMF9SQzIaAml0IAEaBgiA19vDBg; M4_UD01_P01'
+    // Date.now()
+    // 1759938889053
+    // let expiration = new Date(2025, 11, 31)
+    // undefined
+    // expiration
+    // Wed Dec 31 2025 00:00:00 GMT+0000 (Hora de Greenwich)
+
+    // expiration.toUTCString()
+
+    // 'Wed, 31 Dec 2025 00:00:00 GMT'
+
+    // document.cookie = "M4_UD01_P01; date=Date.now(); expiration=expiration"
+
+    // 'M4_UD01_P01; date=Date.now(); expiration=expiration'
+
+    // document.cookie
+
+    // 'SOCS=CAESHAgCEhJnd3NfMjAyNTA3MTQtMF9SQzIaAml0IAEaBgiA19vDBg; M4_UD01_P01'
+
+    // document.cookie = "M4_UD01_P01=" + Date.now() + ";expires=" + expiration.toUTCString() + ";path=/"
+
+    // 'M4_UD01_P01=1759939167036;expires=Wed, 31 Dec 2025 00:00:00 GMT;path=/'
+
+    // document.cookie
+
+    // 'SOCS=CAESHAgCEhJnd3NfMjAyNTA3MTQtMF9SQzIaAml0IAEaBgiA19vDBg; M4_UD01_P01; M4_UD01_P01=1759939167036'
+
+
+
+    document.cookie
+"SOCS=CAESHwgBEhJnd3NfMjAyNTEwMTYtMF9SQzEaBXB0LVBUIAEaBgiAjsbHBg"
+let cookieDate = Date.now()
+undefined
+let currentYear = new Date().getFullYear()
+undefined
+cookieDate
+1760718078369
+currentYear
+2025
+let expirationDate = new Date(currentYear, 11, 31)
+undefined
+expirationDate
+Date Wed Dec 31 2025 00:00:00 GMT+0000 (Greenwich Mean Time)
+
+expirationDateUTC = expirationDate.toUTCString()
+"Wed, 31 Dec 2025 00:00:00 GMT"
+expirationDateUTC
+"Wed, 31 Dec 2025 00:00:00 GMT"
+let myCookie = "M4_UD01_P01"
+undefined
+myCookie
+"M4_UD01_P01"
+document.cookie = `${myCookie}=${cookieDate};expires=${expirationDateUTC}; path=/`
+"M4_UD01_P01=1760718078369;expires=Wed, 31 Dec 2025 00:00:00 GMT; path=/" 
+
+
+
+
+    document.cookie.split(';').reduce((cookies, cookie) => {
+        const [name, value] = cookie.split('=').map(c => c.trim());
+        return { ...cookies, [name]: value };
+    }, {});
+</script>
