@@ -1,5 +1,16 @@
 let loggedInUser;
 let userInfo = document.querySelector("#user-info");
+let loginButton = document.querySelector("#login-button");
+let logoutButton = document.querySelector("#logout-button");
+
+window.onload = () => {
+
+    setUserInfo();
+
+};
+ 
+
+
 
 let setUserInfo = () => {
     loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -11,16 +22,10 @@ let setUserInfo = () => {
         userInfo.innerHTML = `Not logged in`
     }
 
-}
-
-window.onload = () => {
-
-    setUserInfo();
-
-}
+};
 
 
-document.querySelector("#login-button").onclick = async () => {
+loginButton.onclick = async () => {
 
     try {
         let res = await fetch("https://jsonplaceholder.typicode.com/users/1")
@@ -36,13 +41,16 @@ document.querySelector("#login-button").onclick = async () => {
 }
 
 
+logoutButton.onclick = () => {
 
+    try {
 
+        localStorage.removeItem('loggedInUser')
+        setUserInfo();
+        console.log("Logged out");
 
-
-
-// document.querySelector("logout-button").onclick = async () => {
-//     // let res = await fetch("https://jsonplaceholder.typicode.com/users/1")
-//     // let json = await removeEventListener.json()
-//     // console.log(json)
-// }
+    }
+    catch (e) {
+        console.log('error -> ' + e)
+    }
+}
