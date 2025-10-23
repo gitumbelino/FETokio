@@ -1,38 +1,36 @@
-let loggedInUser;
-let userInfo = document.querySelector("#user-info");
+
+let loggedUser = document.querySelector("#logged-user");
 let loginButton = document.querySelector("#login-button");
 let logoutButton = document.querySelector("#logout-button");
 
-window.onload = () => {
+// window.onload = () => {
 
-    setUserInfo();
+//     setLoggedUser();
 
-};
- 
+// };
+
+setLogin = () => {
+    logoutButton.style.display = "initial"
+    loginButton.style.display = "none"
+}
 
 
-
-let setUserInfo = () => {
-    loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-
-    if (loggedInUser) {
-        userInfo.innerHTML = `Logged user: ${loggedInUser.name}`
-    }
-    else {
-        userInfo.innerHTML = `Not logged in`
-    }
-
-};
+setLogout = () => {
+    logoutButton.style.display = "none"
+    loginButton.style.display = "initial"
+}
 
 
 loginButton.onclick = async () => {
 
     try {
-        let res = await fetch("https://jsonplaceholder.typicode.com/users/1")
+        let res = await fetch("https://jsonplaceholder.typicode.com/users/3")
         let loggedInUser = await res.json()
         localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser))
-        setUserInfo();
+        setLoggedUser();
+        setLogin()
         console.log("Logged in");
+        window.location.reload();
 
     }
     catch (e) {
@@ -46,9 +44,10 @@ logoutButton.onclick = () => {
     try {
 
         localStorage.removeItem('loggedInUser')
-        setUserInfo();
+        setLoggedUser();
         console.log("Logged out");
-
+        setLogout()
+ 
     }
     catch (e) {
         console.log('error -> ' + e)
