@@ -1,6 +1,7 @@
 let loggedInUser;
 
 let userName = document.querySelector(".username");
+let name = document.querySelector(".name");
 let mail = document.querySelector(".mail");
 let phone = document.querySelector(".phone");
 let website = document.querySelector(".website");

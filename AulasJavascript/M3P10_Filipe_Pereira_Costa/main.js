@@ -124,9 +124,7 @@ const loadAllUsers = () => {
   </div>
             `
             })
-
         })
-
 
 }
 

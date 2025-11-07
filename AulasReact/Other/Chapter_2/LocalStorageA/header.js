@@ -3,12 +3,6 @@ let loggedUser = document.querySelector("#logged-user");
 let loginButton = document.querySelector("#login-button");
 let logoutButton = document.querySelector("#logout-button");
 
-// window.onload = () => {
-
-//     setLoggedUser();
-
-// };
-
 setLogin = () => {
     logoutButton.style.display = "initial"
     loginButton.style.display = "none"
