@@ -58,7 +58,6 @@ addDateButton = () => {
         storedDate = sessionStorage.getItem("Date")
         errorField.innerHTML = "New date saved: " + storedDate
 
-
     } else {
         sessionStorage.setItem("Date", dateValue);
         console.log("stored date: " + storedDate)
