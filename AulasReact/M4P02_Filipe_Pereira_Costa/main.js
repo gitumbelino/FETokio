@@ -25,10 +25,9 @@
 
 
 let nameInput = document.querySelector("#name-input");
-let errorField = document.querySelector("#error")
-
-// let dateButton = document.querySelector("#add-date-btn");
-// let showButton = document.querySelector("#show-stored-btn");
+let errorField = document.querySelector("#error");
+let storedData = document.querySelector("#stored-data");
+let storedDataCard = document.querySelector("#show-stored-section");
 
 addNameButton = () => {
 
@@ -38,27 +37,27 @@ addNameButton = () => {
 
     if (storedItem !== null) {
         errorField.innerHTML = "Name already saved in local storage"
-        
 
     } else {
         localStorage.setItem("M4_UD02_P02", userNameValue);
+        storedItem = localStorage.getItem("M4_UD02_P02");
         console.log("stored name: " + storedItem)
     }
-
-    console.log("Is something already stored?", storedItem !== null);
-    console.log("Actual stored value:", storedItem);
 
 };
 
 
 addDateButton = () => {
 
-    let dateValue = Date()
+    let dateValue = Date.now()
 
     let storedDate = sessionStorage.getItem("Date")
 
     if (storedDate !== null) {
+        sessionStorage.setItem("Date", dateValue);
+        storedDate = sessionStorage.getItem("Date")
         errorField.innerHTML = "New date saved: " + storedDate
+
 
     } else {
         sessionStorage.setItem("Date", dateValue);
@@ -69,20 +68,23 @@ addDateButton = () => {
 
 getDataButton = () => {
 
-let storedData1 = localStorage.getItem("M4_UD02_P02");
-let storedData2 = sessionStorage.getItem("Date");
+    let storedData1 = localStorage.getItem("M4_UD02_P02");
+    let storedData2 = sessionStorage.getItem("Date");
 
-let allStoredData = {storedData1, storedData2} 
-
-
-if (allStoredData !== null) {
+    if (storedData1 !== null && storedData2 !== null) {
+        storedDataCard.innerHTML = `
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                  Stored Data
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"> Name: ${storedData1}</li>
+                  <li class="list-group-item">Time: ${storedData2}</li>
+                </ul>
+              </div>`
+    } else {
+        console.log("missing fields: " + "name: " + storedData1 + " and time: " + storedData2)
+    }
 
 }
-
-
-
-}
-
-
-
 

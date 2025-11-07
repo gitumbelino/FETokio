@@ -3,21 +3,7 @@ body {
     align-content: center;
     height: 100vh;
     background-color: antiquewhite;
-    margin: 4rem;
+    margin: 0;
+    padding: 0;
 
-}
-
-
-.cards {
-
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.card {
-    width: auto
-}
-
-.card-header{
-    font-weight: 600;
 }
