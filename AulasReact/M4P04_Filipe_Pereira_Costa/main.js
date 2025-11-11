@@ -23,7 +23,7 @@ const apiUrl = "https://jsonplaceholder.typicode.com/photos"
 let html = ``
 const placeholder = "https://placehold.co/80x80"
 
-const n = 3;
+const n = 20;
 
 fetch(apiUrl)
     .then(res => res.json())
@@ -33,7 +33,7 @@ fetch(apiUrl)
 
         selection.forEach(photo => {
 
-            html += `<tr>
+            html += `<tr id="${photo.id}">
                 <th scope="row">${photo.id}</th>
                 <td><img src="${placeholder}" alt=""></td>
                 <td>${photo.title}</td>
@@ -50,7 +50,12 @@ async function deleteAlbum(id) {
     await fetch(`https://jsonplaceholder.typicode.com/photos/${id}`, {
         method: 'DELETE'
     });
-    console.log(`Album ${id} deleted successfully`);
+
+    const row = document.getElementById(`${id}`);
+    row.remove();
+
+
+    console.log(`Album ${id} deleted successfully!`);
 }
 
 
@@ -70,6 +75,8 @@ async function addAlbum() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newEntry)
     });
+
+    
 
     console.log(`Student ${newEntry.title} added successfully`);
 
