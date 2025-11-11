@@ -14,17 +14,19 @@
 // • Mostrar por consola o resultado da inserção.
 
 
+
+
+
+
 const tbody = document.querySelector("tbody");
 const apiUrl = "https://jsonplaceholder.typicode.com/photos"
 let html = ``
 const placeholder = "https://placehold.co/80x80"
 
-const n = 20;
+const n = 3;
 
 fetch(apiUrl)
-
     .then(res => res.json())
-
     .then(photos => {
 
         const selection = photos.slice(0, n);
@@ -35,10 +37,41 @@ fetch(apiUrl)
                 <th scope="row">${photo.id}</th>
                 <td><img src="${placeholder}" alt=""></td>
                 <td>${photo.title}</td>
-                 <td><button type="button" class="btn btn-danger">Delete</button></td>
+                 <td><button onclick="deleteAlbum(${photo.id})" type="button" class="delete-btn btn btn-danger">Delete</button></td>
               </tr>`
 
         });
         tbody.innerHTML = html
 
     })
+
+
+async function deleteAlbum(id) {
+    await fetch(`https://jsonplaceholder.typicode.com/photos/${id}`, {
+        method: 'DELETE'
+    });
+    console.log(`Album ${id} deleted successfully`);
+}
+
+
+
+let newEntry =
+{
+    "albumId": 1,
+    "title": "Filipe Costa",
+    "url": "https://cursos.com/wp-content/uploads/2021/04/academia-tokio-school.jpg",
+    "thumbnailUrl": null
+}
+
+async function addAlbum() {
+
+    await fetch(apiUrl, {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newEntry)
+    });
+
+    console.log(`Student ${newEntry.title} added successfully`);
+
+}
+
