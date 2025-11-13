@@ -1,27 +1,9 @@
-// Prática 4.
-// Com base no resultado do exercício M4_UD03
-// 1. Adicionar uma nova coluna à tabela com um botão que apague o álbum.
-// • Será retirado da vista
-// • Será apagado do API
-// • Mostrar por consola o resultado da eliminação.
-// 2. Adicionar um botão que gera uma nova entrada API
-// • Não será necessário atualizar a vista (tabela)
-// • Os dados a adicionar serão:
-// • albumId 🡺 1,
-// • thumbnail 🡺 null,
-// • title 🡺 nome do aluno
-// • url 🡺 https://cursos.com/wp-content/uploads/2021/04/academia-tokio-school.jpg
-// • Mostrar por consola o resultado da inserção.
-
-
-
-
-
-
 const tbody = document.querySelector("tbody");
 const apiUrl = "https://jsonplaceholder.typicode.com/photos"
 let html = ``
+
 const placeholder = "https://placehold.co/80x80"
+const tokioThumbnail = "https://cursos.com/wp-content/uploads/2021/04/academia-tokio-school.jpg"
 
 const n = 20;
 
@@ -33,13 +15,14 @@ fetch(apiUrl)
 
         selection.forEach(photo => {
 
+            // 1. Adicionar uma nova coluna à tabela com um botão que apague o álbum.
+
             html += `<tr id="${photo.id}">
                 <th scope="row">${photo.id}</th>
                 <td><img src="${placeholder}" alt=""></td>
                 <td>${photo.title}</td>
                  <td><button onclick="deleteAlbum(${photo.id})" type="button" class="delete-btn btn btn-danger">Delete</button></td>
               </tr>`
-
         });
         tbody.innerHTML = html
 
@@ -47,24 +30,32 @@ fetch(apiUrl)
 
 
 async function deleteAlbum(id) {
-    await fetch(`https://jsonplaceholder.typicode.com/photos/${id}`, {
+    await fetch(`${apiUrl}/${id}`, {
+        // • Será apagado do API
         method: 'DELETE'
     });
 
     const row = document.getElementById(`${id}`);
+    // • Será retirado da vista
     row.remove();
 
-
+    // • Mostrar por consola o resultado da eliminação.
     console.log(`Album ${id} deleted successfully!`);
 }
 
 
-
 let newEntry =
+
+
+    // • Os dados a adicionar serão:
+    // • albumId 🡺 1,
+    // • thumbnail 🡺 null,
+    // • title 🡺 nome do aluno
+    // • url 🡺 https://cursos.com/wp-content/uploads/2021/04/academia-tokio-school.jpg
 {
     "albumId": 1,
     "title": "Filipe Costa",
-    "url": "https://cursos.com/wp-content/uploads/2021/04/academia-tokio-school.jpg",
+    "url": tokioThumbnail,
     "thumbnailUrl": null
 }
 
@@ -76,9 +67,9 @@ async function addAlbum() {
         body: JSON.stringify(newEntry)
     });
 
-    
-
+    // • Mostrar por consola o resultado da inserção.
     console.log(`Student ${newEntry.title} added successfully`);
+    console.log(JSON.stringify(newEntry))
 
 }
 

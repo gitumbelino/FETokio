@@ -12,7 +12,6 @@
 
 <body>
   <main>
-
     <table class="table">
       <thead>
         <tr class="align-middle">
@@ -20,14 +19,82 @@
           <th scope="col">Cover</th>
           <th scope="col">Title</th>
           <th scope="col"></th>
-          <th scope="col"> <button onclick= addAlbum() type="button" class="add-btn btn btn-success">Add Album</button></th>
+          <!-- 2. Adicionar um botão que gera uma nova entrada API
+          • Não será necessário atualizar a vista (tabela) -->
+          <th scope="col"> <button onclick=addAlbum() type="button" class="add-btn btn btn-success">Add Album</button>
+          </th>
         </tr>
       </thead>
       <tbody class="align-middle">
       </tbody>
     </table>
   </main>
-  <script src="main.js"></script>
+
+  <script src="main.js">
+
+    // const tbody = document.querySelector("tbody");
+    // const apiUrl = "https://jsonplaceholder.typicode.com/photos"
+    // let html = ``
+
+    // const placeholder = "https://placehold.co/80x80"
+    // const tokioThumbnail = "https://cursos.com/wp-content/uploads/2021/04/academia-tokio-school.jpg"
+
+    // const n = 20;
+
+    // fetch(apiUrl)
+    //   .then(res => res.json())
+    //   .then(photos => {
+
+    //     const selection = photos.slice(0, n);
+
+    //     selection.forEach(photo => {
+
+    //       html += `<tr id="${photo.id}">
+    //             <th scope="row">${photo.id}</th>
+    //             <td><img src="${placeholder}" alt=""></td>
+    //             <td>${photo.title}</td>
+    //              <td><button onclick="deleteAlbum(${photo.id})" type="button" class="delete-btn btn btn-danger">Delete</button></td>
+    //           </tr>`
+
+    //     });
+    //     tbody.innerHTML = html
+    //   })
+
+    // async function deleteAlbum(id) {
+    //   await fetch(`apiUrl/${id}`, {
+    //     method: 'DELETE'
+    //   });
+
+    //   const row = document.getElementById(`${id}`);
+    //   row.remove();
+
+    //   console.log(`Album ${id} deleted successfully!`);
+    // }
+
+
+    // let newEntry =
+    // {
+    //   "albumId": 1,
+    //   "title": "Filipe Costa",
+    //   "url": tokioThumbnail,
+    //   "thumbnailUrl": null
+    // }
+
+    // async function addAlbum() {
+
+    //   await fetch(apiUrl, {
+    //     method: 'POST',
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(newEntry)
+    //   });
+
+
+    //   console.log(`Student ${newEntry.title} added successfully`);
+    //   console.log(JSON.stringify(newEntry))
+    // }
+
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
@@ -37,6 +104,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+
 </body>
 
 </html>
