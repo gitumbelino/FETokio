@@ -9,6 +9,14 @@ function Book(props) {
 
     const { title, author, year, highlight } = props
 
+    // const isHilightedClass = isHiglighted ? "highlighted" : "" 
+
+    let highlightedBackground = 
+
+    if(highlight=true){
+
+    }
+
     return (
         <div>
             <article>
@@ -16,7 +24,7 @@ function Book(props) {
                 <p>{author}</p>
                 <p>{year}</p>
             </article>
-            <div>
+            <div> 
                 {highlight}
             </div>
         </div>
