@@ -4,31 +4,22 @@
 // ano
 // destaque (booleano)
 
+import '../App.css';
 
-function Book(props) {
 
-    const { title, author, year, highlight } = props
 
-    // const isHilightedClass = isHiglighted ? "highlighted" : "" 
+export default function Book(props) {
 
-    let highlightedBackground = 
-
-    if(highlight=true){
-
-    }
+    const { title, author, year, isHighlighted } = props
 
     return (
-        <div>
+        <div className={isHighlighted ? "highlighted-book" : ""}>
             <article>
                 <h2>{title}</h2>
                 <p>{author}</p>
                 <p>{year}</p>
             </article>
-            <div> 
-                {highlight}
-            </div>
         </div>
     )
 }
 
-export default Book
