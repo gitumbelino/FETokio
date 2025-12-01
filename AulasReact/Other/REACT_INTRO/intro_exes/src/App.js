@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Book from './components/book';
 import Movie from './components/movie';

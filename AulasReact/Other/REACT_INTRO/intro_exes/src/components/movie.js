@@ -16,22 +16,27 @@
 
 // Usa o hook useState para criar o estado:
 // const [favorito, setFavorito] = useState(false);
+
 // No JSX apresentado pelo componente inclui:
 // Um <h2> com o título do filme;
 // Parágrafos a mostrar género e ano;
 // Texto a indicar se o filme está marcado como favorito ou não;
 // Um botão:
 // Marcar como Favorito que altera o estado quando clicado.
+
 // Cria o componente pai “App”
 // Abre o ficheiro App.js;
 // Importa o componente Filme;
 // Renderiza pelo menos 3 filmes diferentes, passando as props necessárias.
+
 // Exemplo conceptual:
 // <Filme titulo="Inception" genero="Sci-Fi" ano="2010" />
 // Testar no browser
 // Verifica se os filmes aparecem corretamente;
 // Carrega nos botões e confirma se o estado muda;
+
 // O texto “Favorito” deve mudar automaticamente ao clicar no botão.
+
 // REQUISITOS MÍNIMOS:
 // Projeto React criado com create-react-app;
 // Componente Filme criado em filme.js;
@@ -45,17 +50,58 @@
 // Organiza cada componente no seu ficheiro dentro de src;
 // Aplica estilos simples para tornar a interface mais legível;
 // Para praticar mais, adiciona funcionalidades como:
+
 // botão para remover favorito;
 // alterar cor quando favorito;
 // mostrar um ícone ⭐.
+
 // Se utilizares o ChatGPT, pede ajuda para resolver erros de estado ou eventos.
-import {useState} from 'react';
+
+
+import '../App.css';
+import { useState } from 'react';
+
+
+
+
 
 export default function Movie(props) {
 
-    const {title, genre, year} = props
+    const [favourite, setFavourite] = useState(false);
+    const [standard, setStandard] = useState(false);
+    
 
-    return  (
+    const addFavourite = () => {
+        setFavourite
+        
+    }
+
+    const remFavourite =()=>{
+setStandard
+    }
+
+
+    // No JSX apresentado pelo componente inclui:
+    // Um <h2> com o título do filme;
+    // Parágrafos a mostrar género e ano;
+    // Texto a indicar se o filme está marcado como favorito ou não;
+    // Um botão:
+    // Marcar como Favorito que altera o estado quando clicado.
+
+
+    const { title, genre, year } = props
+
+    return (
+        <div>
+            <article>
+                <h2>{title}</h2>
+                <p>{genre}</p>
+                <p>{year}</p>
+                <button onClick={addFavourite}>Add</button>
+                <button onClick={remFavourite}>Remove</button>
+            </article>
+        </div>
+
 
     )
 }
