@@ -3,12 +3,15 @@ import './App.css';
 import Book from './components/book';
 import Instrument from './components/instrument';
 import Movie from './components/movie';
-import Instrument from './components/instrument';
+
 
 
 
 
 function App() {
+
+  const [instruments, setInstruments] = useState
+
   return (
     <>
       <Book title={"Modos de ver"} author={"John Berger"} year={1972} isHighlighted={false} />
@@ -18,13 +21,9 @@ function App() {
       <Movie title={"Inglorious Basterds"} author={"Tarantino"} year={2010} isFavourite={false} />
       <Movie title={"Grand Budapest Hotel"} author={"sss"} year={2015} isFavourite={false} />
       <Movie title={"Lavagante"} author={"naosei"} year={2025} isFavourite={false} />
-      
-      
-      <Instrument name={"Lavagante"} type={""} />
 
 
-
-
+      {instruments.map(instrument => <Instrument key={instrument.id} name={instrument.name} type={instrument.type} />)}
 
 
     </>

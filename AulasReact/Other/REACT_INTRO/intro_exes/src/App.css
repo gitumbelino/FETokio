@@ -1,5 +1,5 @@
 .card {
- 
+
   height: 150px;
 }
 
@@ -10,7 +10,7 @@
 
 .favourite-movie {
   background-color: rgb(255, 208, 90);
-   width: 300px;
+  width: 300px;
 
 }
 
@@ -22,4 +22,13 @@
 
 button {
   width: 80px;
+}
+
+.instrument {
+  border: 1px solid white;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }

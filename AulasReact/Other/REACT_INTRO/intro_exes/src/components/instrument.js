@@ -64,20 +64,24 @@
 // mostra uma mensagem quando não existirem instrumentos;
 // usa estilos personalizados.
 // Se utilizares o ChatGPT, foca-te em depurar o código React.
-
-import instrumentsJSON from '../data/instruments'
-import { useState } from 'react'
+ 
 
 
-const [instruments, setInstruments] = useState
+export default function Instrument(props) {
 
-export default function Instrument(props){
+    const { name, type, onRemove, onEdit } = props
 
-    const  {name, type, onRemove, onEdit} = props
+    return (
+        <>
+            <div className="instrument">
+                <article>
+                    <h2>Name: {name}</h2>
+                    <p>Type:{type}</p>
+                    <button onClick={ }>{ ? "" : ""}</button>
+                    <button onClick={ }>{ ? "" : ""}</button>
 
-    return(
-<>
-{instruments.map(instrument=>)}
-</>
+                </article>
+            </div>
+        </>
     )
 }
