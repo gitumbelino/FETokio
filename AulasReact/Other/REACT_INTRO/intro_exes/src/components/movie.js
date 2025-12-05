@@ -61,45 +61,27 @@
 import '../App.css';
 import { useState } from 'react';
 
-
-
-
-
 export default function Movie(props) {
 
     const [favourite, setFavourite] = useState(false);
-    const [standard, setStandard] = useState(false);
-    
-
-    const addFavourite = () => {
-        setFavourite
-        
-    }
-
-    const remFavourite =()=>{
-setStandard
-    }
 
 
-    // No JSX apresentado pelo componente inclui:
-    // Um <h2> com o título do filme;
-    // Parágrafos a mostrar género e ano;
-    // Texto a indicar se o filme está marcado como favorito ou não;
-    // Um botão:
-    // Marcar como Favorito que altera o estado quando clicado.
-
+const toggleFavourite = () => {
+  setFavourite(!favourite)
+}
 
     const { title, genre, year } = props
 
     return (
-        <div>
-            <article>
+        <div className={favourite ? "favourite-movie" : ""}> 
+            <article className='card'>
                 <h2>{title}</h2>
                 <p>{genre}</p>
                 <p>{year}</p>
-                <button onClick={addFavourite}>Add</button>
-                <button onClick={remFavourite}>Remove</button>
+                <button onClick={toggleFavourite}>{favourite ? "remove" : "add"}</button>
+              <div className='favourite-icon'>{favourite ? "⭐" : ""}</div>
             </article>
+              
         </div>
 
 

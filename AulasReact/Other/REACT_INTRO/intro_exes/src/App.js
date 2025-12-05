@@ -1,7 +1,12 @@
 
 import './App.css';
 import Book from './components/book';
+import Instrument from './components/instrument';
 import Movie from './components/movie';
+import Instrument from './components/instrument';
+
+
+
 
 function App() {
   return (
@@ -10,11 +15,18 @@ function App() {
       <Book title={"Hundertwasser </br> O Pintor das Cinco Peles"} author={"Pierre Restaby"} year={2001} isHighlighted={true} />
       <Book title={"A Volta ao Mundo em 80 Dias"} author={"Júlio Verne"} year={1873} isHighlighted={false} />
 
-      <Movie title={"Inglorious Basterds"} author={"Tarantino"} year={2010} isHighlighted={false} />
-      <Movie title={"Grand Budapest Hotel"} author={"sss"} year={2015} isHighlighted={false} />
-      <Movie title={"Lavagante"} author={"naosei"} year={2025} isHighlighted={false} />
-
+      <Movie title={"Inglorious Basterds"} author={"Tarantino"} year={2010} isFavourite={false} />
+      <Movie title={"Grand Budapest Hotel"} author={"sss"} year={2015} isFavourite={false} />
+      <Movie title={"Lavagante"} author={"naosei"} year={2025} isFavourite={false} />
       
+      
+      <Instrument name={"Lavagante"} type={""} />
+
+
+
+
+
+
     </>
   );
 }
