@@ -1,32 +1,14 @@
 
-// Criar um componente filho que recebe dados via props;
-// Renderizar uma lista de componentes dinamicamente;
-// Utilizar keys para identificar elementos da lista;
-// Adicionar, remover e editar elementos no estado;
-// Atualizar a interface automaticamente com o React.
 
-
-// O QUE DEVES REALIZAR:
-// Cria um projeto React
-// Cria um novo projeto ou usa um já existente:
-// npx create-react-app listas-keys
-// cd listas-keys
-// npm start
-// Cria o componente filho “InstrumentoMusical”
-// Na pasta src, cria o ficheiro instrumentoMusical.js;
-// Define um componente funcional chamado InstrumentoMusical;
-// O componente deve receber via props:
-// nome
-// tipo
-// onRemover
-// onEditar
 // O JSX deve incluir:
 // Um <h2> com o nome do instrumento;
 // Um parágrafo com o tipo (cordas, percussão, etc.);
 // Um botão Editar que ativa a função onEditar;
 // Um botão Remover que ativa a função onRemover;
+
 // Pequenos estilos e uma borda simples opcional.
 // Configura o componente pai “App”
+
 // No ficheiro App.js:
 // Importa o componente InstrumentoMusical;
 // Cria um array inicial de objetos com:
@@ -36,9 +18,11 @@
 // Guarda esse array no estado:
 // const [instrumentos, setInstrumentos] = useState([...]);
 // Cria as funções:
+
 // Adicionar instrumento: adiciona um novo objeto ao array.
 // Remover instrumento: filtra o array pelo id.
 // Editar instrumento: altera o nome ou tipo de um item existente.
+
 // Renderiza a lista:
 // Usa map() para mostrar todos os instrumentos;
 // Passa props ao componente InstrumentoMusical;
@@ -64,10 +48,10 @@
 // mostra uma mensagem quando não existirem instrumentos;
 // usa estilos personalizados.
 // Se utilizares o ChatGPT, foca-te em depurar o código React.
- 
 
 
 export default function Instrument(props) {
+
 
     const { name, type, onRemove, onEdit } = props
 
@@ -77,8 +61,8 @@ export default function Instrument(props) {
                 <article>
                     <h2>Name: {name}</h2>
                     <p>Type:{type}</p>
-                    <button onClick={ }>{ ? "" : ""}</button>
-                    <button onClick={ }>{ ? "" : ""}</button>
+                    <button onClick={onEdit}>Edit</button>
+                    <button onClick={onRemove}>Remove</button>
 
                 </article>
             </div>

@@ -1,30 +1,57 @@
 
+import { useState } from 'react';
 import './App.css';
 import Book from './components/book';
 import Instrument from './components/instrument';
 import Movie from './components/movie';
-
-
+import instrumentsData from './data/instrumentsData.json'
 
 
 
 function App() {
 
-  const [instruments, setInstruments] = useState
+  const [instruments, setInstruments] = useState(instrumentsData)
+
+  const removeInstrument = (id) => {
+    const newInstrument = instruments.filter(instrument => instrument.id !== id)
+    setInstruments(newInstrument)
+  }
+
+  const addInstrument = () => {
+    // para garantir que o novo id criado não seja coincidente com outros, fiz o seguinte:
+    //fazer uma leitura do array e contar o nr de id's
+    const countIds = instruments.map(instrument => instrument.id);
+    //utilizei o spread operator para obter o nr de cada id de forma individual e o Math max para saber qual o valor mais alto
+    const highestId = Math.max(...countIds);
+    //o novo id é o resultado da contagem anterior mais um
+    const newId = highestId + 1
+
+    //criação do novo objecto
+    const newInstrument = {
+      id: newId,
+      name: "Testing name",
+      type: "Testing type"
+    };
+
+    
+    setInstruments([...instruments, newInstrument])
+  }
+
+  const editInstrument = () => {
+  }
+
+
+
+
 
   return (
     <>
-      <Book title={"Modos de ver"} author={"John Berger"} year={1972} isHighlighted={false} />
-      <Book title={"Hundertwasser </br> O Pintor das Cinco Peles"} author={"Pierre Restaby"} year={2001} isHighlighted={true} />
-      <Book title={"A Volta ao Mundo em 80 Dias"} author={"Júlio Verne"} year={1873} isHighlighted={false} />
+      {instruments.map(instrument => <Instrument key={instrument.id} name={instrument.name} type={instrument.type}
+        onRemove={() => removeInstrument(instrument.id)
+        }
+      />)}
 
-      <Movie title={"Inglorious Basterds"} author={"Tarantino"} year={2010} isFavourite={false} />
-      <Movie title={"Grand Budapest Hotel"} author={"sss"} year={2015} isFavourite={false} />
-      <Movie title={"Lavagante"} author={"naosei"} year={2025} isFavourite={false} />
-
-
-      {instruments.map(instrument => <Instrument key={instrument.id} name={instrument.name} type={instrument.type} />)}
-
+      <button onClick={addInstrument}>Add Instrument</button >
 
     </>
   );
