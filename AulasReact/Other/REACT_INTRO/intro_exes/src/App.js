@@ -33,7 +33,7 @@ function App() {
       type: "Testing type"
     };
 
-    
+    // setInstruments cria um novo array, decompoe o array existente com o spread operator e adiciona o newInstrument
     setInstruments([...instruments, newInstrument])
   }
 
