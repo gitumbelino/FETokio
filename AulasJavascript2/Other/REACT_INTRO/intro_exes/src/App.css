@@ -1,0 +1,53 @@
+.card {
+
+  height: 150px;
+}
+
+
+.highlighted-book {
+  background-color: yellow;
+}
+
+.favourite-movie {
+  background-color: rgb(255, 208, 90);
+  width: 300px;
+
+}
+
+.favourite-icon {
+  justify-self: end;
+  font-size: 32px;
+
+}
+
+button {
+  width: 80px;
+}
+
+.instrument-card {
+  border: 1px solid white;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+}
