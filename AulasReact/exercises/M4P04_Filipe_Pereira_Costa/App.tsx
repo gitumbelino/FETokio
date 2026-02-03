@@ -1,5 +1,21 @@
+import { useState } from "react";
+import InstrumentCard from "./components/instrumentCard";
+import instrumentsData from './data/instrumentsData.json';
+
 function App() {
-  return <h1>M4P04</h1>
+
+  const [instruments, setInstruments] = useState(instrumentsData);
+
+
+  return (
+
+    <>
+      {instruments.map(instrument => <InstrumentCard
+        key={instrument.id}
+        instrument={instrument}
+      />)}
+    </>
+  );
 }
 
 export default App
