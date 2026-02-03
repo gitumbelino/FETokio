@@ -6,9 +6,7 @@ function App() {
 
   const [instruments, setInstruments] = useState(instrumentsData);
 
-
   return (
-
     <>
       {instruments.map(instrument => <InstrumentCard
         key={instrument.id}
