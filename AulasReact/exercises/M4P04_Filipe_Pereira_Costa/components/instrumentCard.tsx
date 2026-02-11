@@ -47,7 +47,7 @@ export default function InstrumentCard({ instrument }: InstrumentCardProps) {
                 />
                 <ActionButton
                     variant="danger"
-                    label="Delete"
+                    label="Apagar"
                     icon={<Delete />}
                     onClick={() => { }}
                 />

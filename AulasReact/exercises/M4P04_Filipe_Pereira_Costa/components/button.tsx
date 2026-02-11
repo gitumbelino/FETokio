@@ -6,10 +6,10 @@ interface ButtonProps {
     icon: React.ReactNode
     onClick: () => void
     variant: 'gray' | 'danger' | 'teal'
+    type?: 'button' | 'submit'
 }
 
-
-export default function ActionButton({ label, icon, onClick, variant }: ButtonProps) {
+export default function ActionButton({ label, icon, onClick, variant, type }: ButtonProps) {
 
     const buttonVariations = {
         gray: {
@@ -32,22 +32,22 @@ export default function ActionButton({ label, icon, onClick, variant }: ButtonPr
         },
     }
 
-
     return (
 
         <Button
-
+            type={type}
             variant="contained"
             disableElevation
-            sx={{...buttonVariations[variant],
-                width:"120px",
-                borderRadius: 3
+            sx={{
+                ...buttonVariations[variant],
+                width: "140px",
+                borderRadius: 3,
+                m:1
             }}
             startIcon={icon}
             onClick={onClick}
         >
             {label}
-
         </Button >
 
 

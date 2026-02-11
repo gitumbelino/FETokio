@@ -6,30 +6,39 @@ import InstrumentForm from "./components/instrumentForm";
 
 
 function App() {
-
+  
   const [instruments, setInstruments] = useState(instrumentsData);
 
+  const addInstrument = (name: string, type: string) => {
+    const newInstrument = {
+      id: instruments.length + 1,
+      name: name,
+      type: type
+    };
+    setInstruments([...instruments, newInstrument]);
+  };
+
   return (
+    <Box sx={{ p: 2 }}>
+      <InstrumentForm addInstrument={addInstrument} />
 
-
-<InstrumentForm>
-
-
-  
-</InstrumentForm>
-
-    <Box
-    sx={{display:'flex',
-      flexWrap: 'wrap',
-      gap:2,
-      p:2
-    }}>
-      {instruments.map(instrument => <InstrumentCard
-        key={instrument.id}
-        instrument={instrument}
-      />)}
+      <Box
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: 2,
+        }}
+      >
+        {instruments.map(instrument => (
+          <InstrumentCard
+            key={instrument.id}
+            instrument={instrument}
+          />
+        ))}
+      </Box>
     </Box>
   );
 }
+
 
 export default App
