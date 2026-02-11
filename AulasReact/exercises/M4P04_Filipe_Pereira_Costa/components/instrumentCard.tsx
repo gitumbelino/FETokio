@@ -14,12 +14,12 @@ export default function InstrumentCard({ instrument }: InstrumentCardProps) {
         <Card 
         elevation={2}
             sx={{
-                maxWidth: "300px",
+                minWidth: "300px",
                 borderRadius: 4,
-                transition: '0.3s',
+                transition: '0.2s',
                 '&:hover': {
-                    transform: 'translateY(-4px)',
-                    boxShadow: 6,
+                    transform: 'translateY(-2px)',
+                    boxShadow: 4,
                 }
             }}>
 
