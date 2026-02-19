@@ -29,7 +29,7 @@ export default function InstrumentForm({ addInstrument }: InstrumentFormProps) {
                 <TextField
                     label="Nome do Instrumento"
                     placeholder="exemplo: violino"
-                    helperText="Enter the Insira o nome do instrumento"
+                    helperText="Insira o nome do instrumento"
                     value={instrumentName}
                     onChange={(e) => setInstrumentName(e.target.value)}
                 />
@@ -41,7 +41,7 @@ export default function InstrumentForm({ addInstrument }: InstrumentFormProps) {
                     onChange={(e) => setInstrumentType(e.target.value)}
                 />
             <Box sx={{ width: '100%', display: 'flex' }}>
-                
+
         <ActionButton
             variant="teal"
             label="Adicionar"

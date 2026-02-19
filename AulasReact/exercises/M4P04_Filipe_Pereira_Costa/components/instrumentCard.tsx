@@ -7,19 +7,44 @@ import ActionButton from './button.tsx';
 import { Edit, Delete } from '@mui/icons-material'
 
 
-interface InstrumentCardProps { instrument: Instrument }
+interface InstrumentCardProps {
+    instrument: Instrument;
+    onRemove: () => void;
+    onEdit: () => void;
+    onCancel: () => void;
+    isEditing: boolean;
+    editInstrument: () => void;
+    editName: string;
+    editType: string;
+    setEditName: (name: string) => void;
+    setEditType: (type: string) => void;
+}
 
-export default function InstrumentCard({ instrument }: InstrumentCardProps) {
+export default function InstrumentCard({
+
+    instrument,
+    onRemove,
+    onEdit,
+    onCancel,
+    isEditing,
+    editInstrument,
+    editName,
+    editType,
+    setEditName,
+    setEditType
+
+}: InstrumentCardProps) {
+
     return (
-        <Card 
-        elevation={2}
+        <Card
+            elevation={2}
             sx={{
                 minWidth: "300px",
                 borderRadius: 4,
                 transition: '0.2s',
                 '&:hover': {
                     transform: 'translateY(-2px)',
-                    boxShadow: 4,
+                    boxShadow: 4
                 }
             }}>
 
@@ -43,13 +68,13 @@ export default function InstrumentCard({ instrument }: InstrumentCardProps) {
                     variant="gray"
                     label="Edit"
                     icon={<Edit />}
-                    onClick={() => { }}
+                    onClick={onEdit}
                 />
                 <ActionButton
                     variant="danger"
                     label="Apagar"
                     icon={<Delete />}
-                    onClick={() => { }}
+                    onClick={onRemove}
                 />
             </Box>
         </Card>
