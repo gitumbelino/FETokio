@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { Instrument } from '../types/Instrument.ts';
 import ActionButton from './button.tsx';
 import { Edit, Delete } from '@mui/icons-material'
+import EditInstrumentModal from './modal.tsx'
 
 
 interface InstrumentCardProps {
@@ -48,6 +49,15 @@ export default function InstrumentCard({
                 }
             }}>
 
+            <EditInstrumentModal
+                open={isEditing}
+                onClose={onCancel}
+                editName={editName}
+                editType={editType}
+                setEditName={setEditName}
+                setEditType={setEditType}
+                onSave={editInstrument}
+            />
             <Box sx={{ p: 2 }}>
                 <Typography gutterBottom variant="h5" component="div">
                     {instrument.name}

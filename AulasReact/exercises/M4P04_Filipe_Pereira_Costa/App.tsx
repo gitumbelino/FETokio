@@ -8,6 +8,8 @@ import Header from "./components/header";
 
 function App() {
 
+   console.log("inicio")
+
   const [instruments, setInstruments] = useState(instrumentsData);
 
   type EditingState = number | null;
@@ -29,6 +31,7 @@ function App() {
   const removeInstrument = (id: number) => {
     const newInstrument = instruments.filter(instrument => instrument.id !== id)
     setInstruments(newInstrument)
+    console.log("removido")
   }
 
 
@@ -39,12 +42,16 @@ function App() {
     setEditName(name)
     setEditType(type)
 
+    console.log("start editing")
+
   }
 
 
   const editInstrument = (id: number) => {
 
     const editedInstruments = instruments.map(instrument => {
+console.log("inicio do edit")
+
       if (instrument.id === id) {
         return {
           ...instrument,
@@ -54,6 +61,8 @@ function App() {
       } else {
         return instrument
       }
+
+     
     })
 
     setInstruments(editedInstruments)

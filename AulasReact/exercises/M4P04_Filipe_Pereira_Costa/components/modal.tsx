@@ -4,10 +4,6 @@ import ActionButton from "./button";
 import { Close, Save } from "@mui/icons-material";
 
 interface EditInstrumentModalProps {
-editInstrument:(name:string,type:string)=>void;
-}
-
-interface EditInstrumentModalProps {
     open: boolean;
     onClose: () => void;
     editName: string;
