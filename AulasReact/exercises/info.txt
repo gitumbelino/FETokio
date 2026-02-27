@@ -1,0 +1,45 @@
+O QUE DEVES REALIZAR:
+Criar o projeto React
+Cria um projeto React com create-react-app:
+npx create-react-app rendering-conditionals
+cd rendering-conditionals
+npm start
+Criar o componente filho “Evento”
+Cria o ficheiro Evento.js na pasta src;
+Define um componente funcional chamado Evento;
+O componente deve receber via props:
+nome
+data
+inscricaoAberta (booleano)
+O componente deve retornar JSX que apresenta os dados do evento e utiliza rendering condicional para mostrar:
+“Inscrições abertas” se inscricaoAberta for true;
+“Inscrições Encerradas” se inscricaoAberta for false.
+Configurar o componente pai “App”
+No ficheiro App.js:
+Importa o componente Evento;
+Cria um array de objetos representando eventos de música, onde cada objeto deve ter:
+id (número único)
+nome
+data
+inscricaoAberta (true/false)
+Guarda o array no estado:
+const [eventos, setEventos] = useState([...]);
+Renderiza a lista usando map(), passando props para cada componente Evento e garantindo uma key única:
+key={evento.id}
+Adicionar botões para alterar o estado
+Adiciona botões que permitam ao utilizador alterar o estado inscricaoAberta de cada evento;
+Os botões devem simular a abertura e o encerramento das inscrições;
+Ao atualizar o estado, a lista deve atualizar automaticamente e mostrar a mensagem correta.
+REQUISITOS MÍNIMOS:
+Projeto React com App.js e Evento.js;
+Componente filho (Evento) que recebe props e exibe informações;
+Componente pai (App) que mantém o array de eventos no estado;
+Renderização condicional para mostrar mensagens diferentes dependendo do valor booleano;
+Botões que permitem alterar o estado de inscrição de cada evento;
+A lista deve atualizar automaticamente quando o estado de inscricaoAberta muda;
+Cada item deve ter key única.
+DICAS:
+Pode usar um IDE com formatação e validação HTML (a tendência é Visual Studio Code ou Sublime Text);
+No caso do Visual Studio Code, utilize o Live Server para verificar se o website apresenta corretamente a página criada;
+Seja criativo e personalize a página de acordo com sua preferência;
+Se utilizar o ChatGPT, foque-se na criação de texto temático e conteúdo, e sobretudo na retificação do código (para melhor reter os conteúdos).

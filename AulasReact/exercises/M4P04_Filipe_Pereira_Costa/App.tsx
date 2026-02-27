@@ -8,7 +8,7 @@ import Header from "./components/header";
 
 function App() {
 
-   console.log("inicio")
+  console.log("inicio")
 
   const [instruments, setInstruments] = useState(instrumentsData);
 
@@ -50,7 +50,7 @@ function App() {
   const editInstrument = (id: number) => {
 
     const editedInstruments = instruments.map(instrument => {
-console.log("inicio do edit")
+      console.log("inicio do edit")
 
       if (instrument.id === id) {
         return {
@@ -62,7 +62,7 @@ console.log("inicio do edit")
         return instrument
       }
 
-     
+
     })
 
     setInstruments(editedInstruments)

@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Festival de Jazz do Porto", "data": "2026-03-15", "subscriptionOpen": true },
+  { "id": 2, "name": "Concerto de Rock Clássico", "data": "2026-04-22", "subscriptionOpen": false },
+  { "id": 3, "name": "Workshop de Bananas na Lama", "data": "2026-05-10", "subscriptionOpen": true },
+  { "id": 4, "name": "Noite de Blues no Bairro Alto", "data": "2026-06-01", "subscriptionOpen": false },
+  { "id": 5, "name": "Festival de Música Eletrónica", "data": "2026-07-18", "subscriptionOpen": true },
+  { "id": 6, "name": "Workshop de Produção Musical", "data": "2026-08-05", "subscriptionOpen": false },
+  { "id": 7, "name": "Concerto de Música Clássica", "data": "2026-09-12", "subscriptionOpen": true },
+  { "id": 8, "name": "Festival de Fado Moderno", "data": "2026-10-25", "subscriptionOpen": false },
+  { "id": 9, "name": "Noite de Reggae e World Music", "data": "2026-11-08", "subscriptionOpen": true },
+  { "id": 10, "name": "Workshop de Bateria e Percussão", "data": "2026-12-03", "subscriptionOpen": false }
+]
