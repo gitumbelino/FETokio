@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Bacalhau à Brás",
+    "onselect": false,
+    "ingredients": ["bacalhau", "ovos", "batata palha", "cebola", "alho", "salsa", "azeitonas", "azeite"]
+  },
+  {
+    "id": 2,
+    "name": "Caldo Verde",
+    "onselect": false,
+    "ingredients": ["couve galega", "batata", "chouriço", "cebola", "alho", "azeite", "sal"]
+  },
+  {
+    "id": 3,
+    "name": "Francesinha",
+    "onselect": false,
+    "ingredients": ["pão de forma", "linguiça", "fiambre", "bife", "queijo", "molho de tomate", "cerveja", "ovo"]
+  },
+  {
+    "id": 4,
+    "name": "Arroz de Pato",
+    "onselect": false,
+    "ingredients": ["pato", "arroz", "chouriço", "cebola", "alho", "vinho branco", "louro", "azeite"]
+  },
+  {
+    "id": 5,
+    "name": "Cataplana de Marisco",
+    "onselect": false,
+    "ingredients": ["amêijoas", "camarão", "lingueirão", "tomate", "pimento", "cebola", "alho", "coentros", "vinho branco"]
+  },
+  {
+    "id": 6,
+    "name": "Leitão à Bairrada",
+    "onselect": false,
+    "ingredients": ["leitão", "alho", "banha", "pimenta", "sal", "louro", "vinho branco"]
+  },
+  {
+    "id": 7,
+    "name": "Açorda Alentejana",
+    "onselect": false,
+    "ingredients": ["pão alentejano", "alho", "coentros", "ovos", "azeite", "sal", "água"]
+  },
+  {
+    "id": 8,
+    "name": "Sardinhas Assadas",
+    "onselect": false,
+    "ingredients": ["sardinha", "sal grosso", "pimento assado", "tomate", "cebola", "azeite", "salsa"]
+  },
+  {
+    "id": 9,
+    "name": "Polvo à Lagareiro",
+    "onselect": false,
+    "ingredients": ["polvo", "batata", "alho", "azeite", "sal grosso", "salsa", "pimentão doce"]
+  },
+  {
+    "id": 10,
+    "name": "Feijoada à Portuguesa",
+    "onselect": false,
+    "ingredients": ["feijão encarnado", "chouriço", "morcela", "entrecosto", "orelha de porco", "cenoura", "cebola", "alho", "louro"]
+  }
+]

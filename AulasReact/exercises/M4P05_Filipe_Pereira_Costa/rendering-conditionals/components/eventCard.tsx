@@ -47,7 +47,6 @@ export default function EventCard({
                 justifyContent: 'right'
 
             }}>
-
                 {subscriptionOpen === true ? (
                     <ActionButton
                         variant="teal"
