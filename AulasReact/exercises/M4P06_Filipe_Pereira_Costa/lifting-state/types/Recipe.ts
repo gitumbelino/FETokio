@@ -1,6 +1,6 @@
 export type Recipe = {
     id: number;
     name: string;
-    onselect:boolean;
+    onSelect:boolean;
     ingredients: string[];
 }

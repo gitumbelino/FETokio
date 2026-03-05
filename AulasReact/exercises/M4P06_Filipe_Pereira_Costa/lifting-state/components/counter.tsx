@@ -7,7 +7,7 @@ interface CounterProps {
 }
 
 export default function Counter({
-  selected = 1
+  selected
 
 }: CounterProps) {
 
