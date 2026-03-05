@@ -1,60 +1,70 @@
 [
   {
     "id": 1,
+    "img": "bacalhau.webp",
     "name": "Bacalhau à Brás",
     "onselect": false,
     "ingredients": ["bacalhau", "ovos", "batata palha", "cebola", "alho", "salsa", "azeitonas", "azeite"]
   },
   {
     "id": 2,
+    "img": "caldo.webp",
     "name": "Caldo Verde",
     "onselect": false,
     "ingredients": ["couve galega", "batata", "chouriço", "cebola", "alho", "azeite", "sal"]
   },
   {
     "id": 3,
+    "img": "france.webp",
     "name": "Francesinha",
     "onselect": false,
     "ingredients": ["pão de forma", "linguiça", "fiambre", "bife", "queijo", "molho de tomate", "cerveja", "ovo"]
   },
   {
     "id": 4,
+    "img": "pato.webp",
     "name": "Arroz de Pato",
     "onselect": false,
     "ingredients": ["pato", "arroz", "chouriço", "cebola", "alho", "vinho branco", "louro", "azeite"]
   },
   {
     "id": 5,
+    "img": "cataplana.webp",
     "name": "Cataplana de Marisco",
     "onselect": false,
     "ingredients": ["amêijoas", "camarão", "lingueirão", "tomate", "pimento", "cebola", "alho", "coentros", "vinho branco"]
   },
   {
     "id": 6,
+    "img": "leitao.webp",
     "name": "Leitão à Bairrada",
     "onselect": false,
     "ingredients": ["leitão", "alho", "banha", "pimenta", "sal", "louro", "vinho branco"]
   },
   {
     "id": 7,
+    "img": "acorda.webp",
     "name": "Açorda Alentejana",
     "onselect": false,
     "ingredients": ["pão alentejano", "alho", "coentros", "ovos", "azeite", "sal", "água"]
   },
   {
     "id": 8,
+    "img": "sardinha.webp",
     "name": "Sardinhas Assadas",
     "onselect": false,
     "ingredients": ["sardinha", "sal grosso", "pimento assado", "tomate", "cebola", "azeite", "salsa"]
   },
   {
     "id": 9,
+    "img": "polvo.webp",
     "name": "Polvo à Lagareiro",
     "onselect": false,
     "ingredients": ["polvo", "batata", "alho", "azeite", "sal grosso", "salsa", "pimentão doce"]
   },
   {
     "id": 10,
+    "img": "feijoada.webp",
     "name": "Feijoada à Portuguesa",
     "onselect": false,
     "ingredients": ["feijão encarnado", "chouriço", "morcela", "entrecosto", "orelha de porco", "cenoura", "cebola", "alho", "louro"]

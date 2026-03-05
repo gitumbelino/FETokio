@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -6,6 +7,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Recipe } from '../types/Recipe';
 import { Divider, Box, List, ListItem, ListItemText } from '@mui/material';
+
+const images = import.meta.glob('../../public/img/*.webp', { eager: true }) as Record<string, { default: string }>
 
 
 interface RecipeProps {
@@ -28,9 +31,11 @@ export default function RecipeCard({
             <Card elevation={2}
                 sx={{
                     m: 2,
-                    width: "400px",
+                    width: "320px",
                     borderRadius: 4,
                     transition: '0.2s',
+                    display: 'flex',
+                    flexDirection: 'column',
                     '&:hover': {
                         transform: 'translateY(-2px)',
                         boxShadow: 4
@@ -38,18 +43,18 @@ export default function RecipeCard({
                 }}>
                 <CardMedia
                     sx={{ height: 140 }}
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    image={images[`../../public/img/${recipe.img}`]?.default}
                     title={recipe.name}
                 />
-                <CardContent  >
+                <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="div">
                         {recipe.name}
                     </Typography>
                     <Divider />
                     <List dense>
                         {recipe.ingredients.map((ingredient, index) => (
-                            <ListItem key={index} sx={{ py: 0 }}>
-                                <ListItemText primary={`• ${ingredient}`} />
+                            <ListItem key={index}>
+                                <ListItemText primary={ingredient} />
                             </ListItem>
                         ))}
                     </List>
@@ -58,14 +63,14 @@ export default function RecipeCard({
                 <CardActions
                     sx={{
                         p: 2,
-                        display: 'flex',
-                        justifyContent: 'right'
+                        justifyContent: 'right',
+                        alignContent: 'bottom'
                     }}>
                     <Button
                         onClick={onSelect}
                         size="small" >Selecionar</Button>
                 </CardActions>
             </Card>
-        </Box>
+        </Box >
     );
 }

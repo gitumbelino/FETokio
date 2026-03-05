@@ -1,42 +1,33 @@
-
 import { useState } from "react";
 import RecipeCard from "./lifting-state/components/recipeCard.tsx";
-import data from "./lifting-state/data/recipeData.json"
+import recipesData from "./lifting-state/data/recipeData.json"
 import Header from "./lifting-state/components/header.tsx";
-import { Box} from "@mui/material";
-
+import { Box } from "@mui/material";
 
 function App() {
 
-  const [recipes, setRecipes] = useState(data)
+  const [recipes] = useState(recipesData)
 
-const[selected, setSelected] = useState([])
-
-  const selectedState = (id: number, selected: number) => {
-
-    const selectedState = recipes.map(recipe => {
+  const [selected, setSelected] = useState<number[]>([])
 
 
-      if (recipe.id === id) {
+const selectRecipe = (id: number) => {
+  const alreadySelected = selected.includes(id)
 
-        return {
-          ...recipe,
-          selected: !selected
-
-        }
-      } else {
-        return {  
-          ...recipe
-        }
-      }
-    })
-    setRecipes(selectedState)
+  if (alreadySelected) {
+    const newList = selected.filter(recipeId => recipeId !== id)
+    setSelected(newList)
+    
+  } else {
+    const newList = [...selected, id]
+    setSelected(newList)
   }
+}
 
 
   return (
     <Box>
-      <Header />
+      <Header selected={selected.length} />
       <Box sx={{
         display: 'flex',
         flexWrap: 'wrap',
@@ -47,9 +38,7 @@ const[selected, setSelected] = useState([])
           <RecipeCard
             key={recipe.id}
             recipe={recipe}
-            onSelect={() => {selectedState(recipe.id, recipe.onSelect)}}
-            selected= {selected}
-            setSelected={setSelected}
+            onSelect={() => selectRecipe(recipe.id)}
           />
         ))}
 
