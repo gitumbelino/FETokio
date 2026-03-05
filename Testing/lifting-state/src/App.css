@@ -44,7 +44,23 @@
   color: #888;
 }
 
+.card{
+  padding: 2em;
+}
+
+
+.user-card{
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px;
+}
+
 button.select {
   margin: 4px;
   background-color: gray;
+}
+
+.user-card.selected{
+  background-color: yellow;
 }

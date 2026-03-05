@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import usersData from './data/users.json'
 import User from './components/User';
-
+import './App.css'
 
 
 usersData.forEach(user => {
@@ -33,11 +33,11 @@ function App() {
   return (
     <>
       <div>
-        {users.map(user => <User id={user.id} user={user} selectUser={selectUser} />)}
+        {users.map(user => <User key={user.id} user={user} selectUser={selectUser} />)}
       </div>
     </>
 
   )
-}
+} 
 
 export default App
