@@ -1,5 +1,4 @@
 import { useState } from "react";
-import React from "react";
 import { Box, CssBaseline } from "@mui/material";
 import BookingForm from "./components/bookingForm"
 import Header from "./components/header";
@@ -30,8 +29,6 @@ function App() {
     setCheckOut(e.target.value);
   }
 
-
-
   const handleSubmit = e => {
 
     e.preventDefault()
@@ -40,7 +37,6 @@ function App() {
     console.log(room)
     console.log(checkIn)
     console.log(checkOut)
-
   };
 
 
@@ -58,11 +54,7 @@ function App() {
             justifyContent: "center",
             bgcolor: "wheat",
             boxSizing: "content-box"
-
           }} >
-
-
-
 
           <BookingForm
             onSubmit={handleSubmit}
@@ -71,10 +63,7 @@ function App() {
             onChangeCheckIn={handleCheckIn}
             onChangeCheckOut={handleCheckOut}
           />
-
-
         </Box>
-
       </main>
     </>
   )
