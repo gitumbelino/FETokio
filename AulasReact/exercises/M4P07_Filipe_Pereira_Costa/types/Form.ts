@@ -3,7 +3,3 @@ export type Booking = {
     room: Number;
     date: String;
 }
-
-export type Room ={
-    name:String;
-}

@@ -1,50 +1,62 @@
 import { useState } from "react";
+import React from "react";
 import BookingForm from "./components/bookingForm"
+import Header from "./components/header";
 
 
-
-
+const userNameLength = 8
 
 function App() {
 
-  const [statusMessage, setStatusMessage] = useState('Invalid E-mail')
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
-  const [email, setEmail] = useState('');
-  const [submit, onsubmit] = useState('');
+  const [checkIn, setCheckIn] = useState('');
+  const [checkOut, setCheckOut] = useState('');
 
-
-
-
-
-  const updateValue = (e) => {
+  const handleName = (e) => {
     setName(e.target.value);
+  }
+
+  const handleRoom = (e) => {
     setRoom(e.target.value);
-    setEmail(e.target.value);
-  };
+  }
 
+  const handleCheckIn = (e) => {
+    setCheckIn(e.target.value);
+  }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-  };
-
-  const form = e.target
-
-  const passwordLength = 8
-
-  if (form.username.value.lenght <= passwordLength){
-    setStatusMessage(`username needs ${passwordLength} letters`)
+  const handleCheckOut = (e) => {
+    setCheckOut(e.target.value);
   }
 
 
-    return (
-      <BookingForm
-        onSubmit={handleEvent}
+
+  const handleSubmit = e => {
+
+    e.preventDefault()
+
+    console.log(name)
+    console.log(room)
+    console.log(checkIn)
+    console.log(checkOut)
+
+  };
 
 
-      ></BookingForm>
-
-    )
+  return (
+    <>
+      <Header />
+      <main>
+        <BookingForm
+          onSubmit={handleSubmit}
+          onChangeName={handleName}
+          onChangeRoom={handleRoom}
+          onChangeCheckIn={handleCheckIn}
+          onChangeCheckOut={handleCheckOut}
+        />
+      </main>
+    </>
+  )
 }
 
 export default App
