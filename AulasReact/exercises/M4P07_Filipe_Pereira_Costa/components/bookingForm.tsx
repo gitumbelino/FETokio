@@ -1,4 +1,4 @@
-import { TextField, Button, Box} from '@mui/material';
+import { TextField, Button, Box } from '@mui/material';
 import React from 'react';
 
 export default function BookingForm(
@@ -18,46 +18,38 @@ export default function BookingForm(
 
     return (
 
-        <Box
+
+
+
+
+
+        <Box component="form"
+            onSubmit={onSubmit}
 
             sx={{
-                width: "100vw",
-                height: "100vh",
+                width: "240px",
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                bgcolor: "wheat",
-                boxSizing: "border-box"
-            }}
-        >
+                flexDirection: "column",
+                borderRadius: "16px",
+                padding: "20px",
+                margin: "20px",
+                gap: "12px",
+                bgcolor: "white",
+                m:0
+            }}>
 
-            <Box component="form"
-                onSubmit={onSubmit}
+            <TextField label="Nome" required onChange={onChangeName} />
 
-                sx={{
-                    width: "240px",
-                    display: "flex",
-                    flexDirection: "column",
-                    border: "1px solid white",
-                    borderRadius: "16px",
-                    padding: "20px",
-                    margin: "20px",
-                    gap: "12px",
-                    bgcolor: "white"
-                }}>
+            <TextField label="Nrº de Quartos" type="number" required onChange={onChangeRoom} />
 
-                <TextField label="Nome" required onChange={onChangeName} />
+            <TextField label="Data" type="date" required onChange={onChangeCheckIn} slotProps={{ inputLabel: { shrink: true } }} />
+            <TextField label="Data" type="date" required onChange={onChangeCheckOut} slotProps={{ inputLabel: { shrink: true } }} />
 
-                <TextField label="Nrº de Quartos" type="number" required onChange={onChangeRoom} />
+            <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                <Button type="submit">Marcar</Button>
+            </Box>
+        </Box >
 
-                <TextField label="Data" type="date" required onChange={onChangeCheckIn} slotProps={{ inputLabel: { shrink: true } }} />
-                <TextField label="Data" type="date" required onChange={onChangeCheckOut} slotProps={{ inputLabel: { shrink: true } }} />
-
-                <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                    <Button type="submit">Marcar</Button>
-                </Box>
-            </Box >
-        </Box>
     )
 }
 

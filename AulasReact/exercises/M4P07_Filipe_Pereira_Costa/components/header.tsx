@@ -7,10 +7,10 @@ export default function Header() {
 
         <Card sx={{
             p: 2,
-            mb: 2,
-            borderRadius: 4,
             boxShadow: 2,
-            bgcolor: '#00695c'
+            bgcolor: '#00695c',
+            width: "100vw",
+            mt:0
         }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <CalendarTodayIcon sx={{ color: 'white', mr: 1 }} />

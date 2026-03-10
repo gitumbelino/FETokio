@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import { Box, CssBaseline } from "@mui/material";
 import BookingForm from "./components/bookingForm"
 import Header from "./components/header";
 
@@ -45,15 +46,35 @@ function App() {
 
   return (
     <>
-      <Header />
+      <CssBaseline />
       <main>
-        <BookingForm
-          onSubmit={handleSubmit}
-          onChangeName={handleName}
-          onChangeRoom={handleRoom}
-          onChangeCheckIn={handleCheckIn}
-          onChangeCheckOut={handleCheckOut}
-        />
+        <Header />
+        <Box
+          sx={{
+            width: "100vw",
+            height: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            bgcolor: "wheat",
+            boxSizing: "content-box"
+
+          }} >
+
+
+
+
+          <BookingForm
+            onSubmit={handleSubmit}
+            onChangeName={handleName}
+            onChangeRoom={handleRoom}
+            onChangeCheckIn={handleCheckIn}
+            onChangeCheckOut={handleCheckOut}
+          />
+
+
+        </Box>
+
       </main>
     </>
   )
