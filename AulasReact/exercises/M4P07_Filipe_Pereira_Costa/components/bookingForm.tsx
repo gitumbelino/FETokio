@@ -8,6 +8,7 @@ export default function BookingForm(
         onChangeCheckIn,
         onChangeCheckOut
     }: {
+        
         onSubmit: (e: React.SyntheticEvent) => void,
         onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void,
         onChangeRoom: (e: React.ChangeEvent<HTMLInputElement>) => void,

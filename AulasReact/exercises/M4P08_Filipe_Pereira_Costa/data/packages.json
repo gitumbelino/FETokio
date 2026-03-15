@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "packageType": "Voo + Hotel",
+    "img": "/images/pkg-flight-hotel.jpg",
+    "description": "Voos de ida e volta e 7 noites em hotel de 4 estrelas. Pequeno-almoço incluído. Disponível para todos os destinos."
+  },
+  {
+    "id": 2,
+    "packageType": "Voo + Hotel + Carro",
+    "img": "/images/pkg-flight-hotel-car.jpg",
+    "description": "Tudo o que inclui o pacote Voo + Hotel, mais aluguer de carro ilimitado durante toda a estadia."
+  },
+  {
+    "id": 3,
+    "packageType": "Tudo Incluído",
+    "img": "/images/pkg-all-inclusive.jpg",
+    "description": "Voos, hotel de 5 estrelas, todas as refeições, bebidas e visitas guiadas. A férias perfeita sem preocupações."
+  },
+  {
+    "id": 4,
+    "packageType": "Escapadinha de Fim de Semana",
+    "img": "/images/pkg-weekend.jpg",
+    "description": "Uma pausa de 3 dias com voos e hotel. Ideal para uma fuga rápida sem gastar muitos dias de férias."
+  },
+  {
+    "id": 5,
+    "packageType": "Lua de Mel",
+    "img": "/images/pkg-honeymoon.jpg",
+    "description": "Pacote romântico de 10 noites com hotel de luxo, transfers privados e jantar ao pôr do sol a dois."
+  },
+  {
+    "id": 6,
+    "packageType": "Mochileiro",
+    "img": "/images/pkg-backpacker.jpg",
+    "description": "Voo + alojamento em hostel por 14 dias. A opção mais económica para explorar o mundo sem gastar muito."
+  },
+  {
+    "id": 7,
+    "packageType": "Aventura e Natureza",
+    "img": "/images/pkg-adventure.jpg",
+    "description": "Voo, hotel e atividades ao ar livre incluídas: trilhos, mergulho, escalada e muito mais."
+  },
+  {
+    "id": 8,
+    "packageType": "Cruzeiro",
+    "img": "/images/pkg-cruise.jpg",
+    "description": "Cruzeiro de 8 dias com visita a vários destinos, refeições a bordo e entretenimento incluído."
+  },
+  {
+    "id": 9,
+    "packageType": "Férias em Família",
+    "img": "/images/pkg-family.jpg",
+    "description": "Pacote pensado para famílias com crianças: hotel com parque aquático, animação diária e refeições incluídas."
+  },
+  {
+    "id": 10,
+    "packageType": "Turismo Cultural",
+    "img": "/images/pkg-cultural.jpg",
+    "description": "Voo, hotel de 3 estrelas e visitas guiadas a monumentos, museus e pontos históricos do destino escolhido."
+  }
+]

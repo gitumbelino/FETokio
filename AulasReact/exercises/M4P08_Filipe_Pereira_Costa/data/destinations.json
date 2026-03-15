@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Paris",
+    "img": "paris.webp",
+    "description": "A cidade da luz, famosa pela Torre Eiffel, gastronomia de excelência e museus icónicos."
+  },
+  {
+    "id": 2,
+    "name": "Tóquio",
+    "img": "tokio.webp",
+    "description": "Uma metrópole vibrante que combina tecnologia de ponta com templos ancestrais e tradições milenares."
+  },
+  {
+    "id": 3,
+    "name": "Rio de Janeiro",
+    "img": "rio.webp",
+    "description": "Uma cidade costeira deslumbrante, conhecida pelo Carnaval, pelo Cristo Redentor e pelas praias espetaculares."
+  },
+  {
+    "id": 4,
+    "name": "Nova Iorque",
+    "img": "ny.webp",
+    "description": "A cidade que nunca dorme — lar do Times Square, do Central Park e da Estátua da Liberdade."
+  },
+  {
+    "id": 5,
+    "name": "Lisboa",
+    "img": "lisboa.webp",
+    "description": "A encantadora capital portuguesa com elétricos históricos, fado e miradouros espetaculares."
+  },
+  {
+    "id": 6,
+    "name": "Roma",
+    "img": "roma.webp",
+    "description": "A cidade eterna, repleta de história, com o Coliseu, o Vaticano e uma gastronomia inigualável."
+  },
+  {
+    "id": 7,
+    "name": "Bali",
+    "img": "bali.webp",
+    "description": "Uma ilha paradisíaca na Indonésia, famosa pelos templos, arrozais em socalcos e praias tropicais."
+  },
+  {
+    "id": 8,
+    "name": "Marraquexe",
+    "img": "marrocos.webp",
+    "description": "Uma cidade mágica em Marrocos, com a sua medina histórica, souks coloridos e palácios deslumbrantes."
+  },
+  {
+    "id": 9,
+    "name": "Sydney",
+    "img": "sydney.webp",
+    "description": "A vibrante metrópole australiana, conhecida pela Ópera de Sydney, a Harbour Bridge e as praias icónicas."
+  },
+  {
+    "id": 10,
+    "name": "Buenos Aires",
+    "img": "buenos aires.webp",
+    "description": "A capital argentina, berço do tango, com bairros boémios, arquitetura europeia e vida noturna intensa."
+  }
+]
