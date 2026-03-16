@@ -12,12 +12,12 @@ export default function Header() {
             boxShadow: 2,
             bgcolor: '#00695c'
         }}>
-<Box sx={{ display: 'flex', alignItems: 'center' }}>
-    <FestivalIcon sx={{ color: 'white', mr: 1 }} />
-    <Typography variant="h6" sx={{ color: 'white' }}>
-        Event Manager
-    </Typography>
-</Box>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <FestivalIcon sx={{ color: 'white', mr: 1 }} />
+                <Typography variant="h6" sx={{ color: 'white' }}>
+                    Event Manager
+                </Typography>
+            </Box>
 
         </Card>
     );
